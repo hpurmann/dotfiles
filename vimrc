@@ -1,3 +1,4 @@
+" File inspired by vimified (https://github.com/zaiste/vimified/)
 set nocompatible
 filetype on
 filetype off
@@ -22,18 +23,20 @@ let maplocalleader = "\\"
 
     "Add your bundles here
     Bundle 'https://github.com/tpope/vim-fugitive'
-		Bundle 'scrooloose/nerdtree'
-		" Disable the scrollbars (NERDTree)
+    Bundle 'scrooloose/nerdtree'
+    " Disable the scrollbars (NERDTree)
     set guioptions-=r
     set guioptions-=L
+
     " Keep NERDTree window fixed between multiple toggles
     set winfixwidth
-	nmap <C-i> :NERDTreeToggle<CR>
-	Bundle 'bling/vim-airline'
+    nmap <C-i> :NERDTreeToggle<CR>
+    Bundle 'bling/vim-airline'
     Bundle 'scrooloose/nerdcommenter'
     map <leader>c :call NERDComment(0, "invert")<cr>
     nmap <leader>c :call NERDComment(0, "invert")<cr>
     vmap <leader>c :call NERDComment(0, "invert")<cr>
+    Bundle 'Valloric/YouCompleteMe'
 
     " Color
     Bundle 'tomasr/molokai'
@@ -51,6 +54,7 @@ let maplocalleader = "\\"
     endif
 " Setting up Vundle - the vim plugin bundler end
 
+filetype plugin indent on
 syntax on
 " Relative line numbers
 set relativenumber
@@ -68,22 +72,93 @@ set softtabstop=4
 set textwidth=80
 set shiftwidth=4
 set expandtab
+set wrap
+set formatoptions=qrn1
+
+" Show whitespace characters
+set list
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
+set showbreak=↪
+
+set notimeout
+set ttimeout
+set ttimeoutlen=10
+
+set visualbell
+
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc,tmp,*.scssc
+set wildmenu
+
+if has('persistent_undo')
+  set undodir=~/.vim/tmp/undo//     " undo files
+  set undofile
+  set undolevels=3000
+  set undoreload=10000
+endif
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
+set backup
+set noswapfile
+
+augroup trailing
+    au!
+    au InsertEnter * :set listchars-=trail:␣
+    au InsertLeave * :set listchars+=trail:␣
+augroup END
+
+" Cursorline {{{
+" Only show cursorline in the current window and in normal mode.
+augroup cline
+    au!
+    au WinLeave * set nocursorline
+    au WinEnter * set cursorline
+    au InsertEnter * set nocursorline
+    au InsertLeave * set cursorline
+augroup END
+" }}}
+
+
+" sane regexes
+nnoremap / /\v
+vnoremap / /\v
+
+set ignorecase
+set smartcase
+set showmatch
+set gdefault
+set hlsearch
+
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" clear search matching
+noremap <leader><space> :noh<cr>:call clearmatches()<cr>
 
 noremap <left> <nop>
 noremap <up> <nop>
 noremap <down> <nop>
 noremap <right> <nop>
 
-" clear search matching
-noremap <leader><space> :noh<cr>:call clearmatches()<cr>
+" Easy splitted window navigation
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
 
 " better ESC
 inoremap jj <Esc>
 
+set autoread
 set encoding=utf-8
+set backspace=indent,eol,start
 set hidden
 set history=1000
 set laststatus=2
+set ruler
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
@@ -119,18 +194,23 @@ nnoremap ; :
 "inoremap <c-s> <c-o>:Update<CR>
 map <C-v> "+p
 vmap <C-c> "+y
-autocmd! bufwritepost vimrc source $MYVIMRC
-autocmd! bufwritepost .vimrc source $MYVIMRC
-map <C-t> <esc>:enew<CR>
-map <C-w> :bd<CR>
-" source
+
+augroup MyAutoCmd
+    autocmd!
+    autocmd MyAutoCmd BufWritePost ~/dotfiles/vimrc nested source $MYVIMRC
+augroup END
+
+if $TMUX == ''
+    set clipboard+=unnamed
+endif
+
 map <Leader>w :update<CR>
-nnoremap <Leader>ev <esc>:e $MYVIMRC<CR>
+nnoremap <Leader>ev <esc>:e ~/dotfiles/vimrc<CR>
+nnoremap <Leader>ez <esc>:e ~/dotfiles/zshrc<CR>
+nnoremap <Leader>et <esc>:e ~/dotfiles/tmux.conf<CR>
 " Easy buffer navigation
 noremap <C-h> :bprevious<CR>
 noremap <C-l> :bnext<CR>
-
-
 
 " Routines
 " Macro for indentation of whole file

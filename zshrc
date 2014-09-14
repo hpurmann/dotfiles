@@ -7,6 +7,7 @@ vim() STTY=-ixon command vim "$@"
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
+alias tmux="TERM=screen-256color-bce tmux"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
