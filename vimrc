@@ -248,4 +248,4 @@ autocmd Filetype sml nnoremap <buffer> <Leader>rr <esc>:update<Bar>execute '!sml
 autocmd Filetype markdown nnoremap <buffer> <Leader>rr <esc>:update<Bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
 "}}}
 
-au BufNewFile,BufRead *.tig so ~/.vim/tiger.vim
+au BufNewFile,BufRead *.tig so ~/dotfiles/vim/syntax/tiger.vim
