@@ -4,9 +4,6 @@ filetype on
 filetype off
 set modelines=0
 
-let mapleader = ","
-let maplocalleader = "\\"
-
 " Vundle Installation
 let vundleInstalled = 1
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
@@ -23,53 +20,37 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-
-"Add your bundles here
-Bundle 'https://github.com/tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
-" Disable the scrollbars (NERDTree)
-set guioptions-=r
-set guioptions-=L
-
-" Keep NERDTree window fixed between multiple toggles
-set winfixwidth
-nmap <C-i> :NERDTreeToggle<cr>
 Bundle 'bling/vim-airline'
 Bundle 'scrooloose/nerdcommenter'
-map <leader>c :call NERDComment(0, "invert")<cr>
-nmap <leader>c :call NERDComment(0, "invert")<cr>
-vmap <leader>c :call NERDComment(0, "invert")<cr>
+Bundle 'ervandew/supertab'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'SirVer/ultisnips'
 Bundle 'tpope/vim-surround'
-
-" Color
 Bundle 'tomasr/molokai'
-" During installation the molokai colorscheme might not be avalable
-if filereadable(globpath(&rtp, 'colors/molokai.vim'))
-    colorscheme molokai
-else
-    colorscheme default
-endif
 
 if vundleInstalled == 0
     echo "Installing Bundles, please ignore key map error messages"
     echo ""
     :BundleInstall
 endif
-" Setting up Vundle - the vim plugin bundler end
+" Vundle Installation end
 
 filetype plugin indent on
 syntax on
-" Relative line numbers
-set relativenumber
-set number
+
+let mapleader = ","
+let maplocalleader = "\\"
+
 " It defines where to look for the buffer user demanding (current window, all
 " windows in other tabs, or nowhere, i.e. open file from scratch every time) and
 " how to open the buffer (in the new split, tab, or in the current window).
 
 " This orders Vim to open the buffer.
 set switchbuf=useopen
-
+set relativenumber
+set number
 set autoindent
 set tabstop=4
 set softtabstop=4
@@ -84,15 +65,18 @@ set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
 set showbreak=↪
 
+" Remove timeout when going back to normal mode
 set notimeout
 set ttimeout
 set ttimeoutlen=10
 
+" Remove annoying sounds
 set visualbell
 
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc,tmp,*.scssc
 set wildmenu
 
+" Set up undo-, backup- and swapfiles
 if has('persistent_undo')
     set undodir=~/.vim/tmp/undo//     " undo files
     set undofile
@@ -121,6 +105,7 @@ augroup cline
 augroup END
 " }}}
 
+" === Searching === {{{
 
 " sane regexes
 nnoremap / /\v
@@ -139,17 +124,19 @@ nnoremap N Nzzzv
 
 " clear search matching
 noremap <leader><space> :noh<cr>:call clearmatches()<cr>
+" }}}
 
+" Don't use arrow keys - they shouldn't be touched in vim
 noremap <left> <nop>
 noremap <up> <nop>
 noremap <down> <nop>
 noremap <right> <nop>
 
 " Easy splitted window navigation
-noremap <C-h> <C-w>h
+" noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
+" noremap <C-l> <C-w>l
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
@@ -198,8 +185,6 @@ nnoremap ; :
 "\|endif
 "nnoremap <silent> <C-S> :<C-u>Update<cr>
 "inoremap <c-s> <c-o>:Update<cr>
-map <C-v> "+p
-vmap <C-c> "+y
 
 augroup MyAutoCmd
     autocmd!
@@ -210,11 +195,16 @@ if $TMUX == ''
     set clipboard+=unnamed
 endif
 
-map <Leader>w :update<cr>
+" Saving and closing
+nnoremap <Leader>w :update<cr>
 nnoremap <Leader>q <esc>:bd<cr>
-nnoremap <Leader>ev <esc>:e ~/dotfiles/vimrc<cr>
-nnoremap <Leader>ez <esc>:e ~/dotfiles/zshrc<cr>
-nnoremap <Leader>et <esc>:e ~/dotfiles/tmux.conf<cr>
+
+" Quick editing
+nnoremap <leader>ev :e ~/dotfiles/vimrc<cr>
+nnoremap <leader>ez :e ~/dotfiles/zshrc<cr>
+nnoremap <leader>et :e ~/dotfiles/tmux.conf<cr>
+nnoremap <Leader>es :UltiSnipsEdit<cr>
+
 " Easy buffer navigation
 noremap <C-h> :bprevious<cr>
 noremap <C-l> :bnext<cr>
@@ -253,3 +243,53 @@ autocmd Filetype markdown nnoremap <buffer> <Leader>rr <esc>:update<Bar>execute 
 "}}}
 
 au BufNewFile,BufRead *.tig so ~/dotfiles/vim/syntax/tiger.vim
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    PLUGINS    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    NerdTree    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Disable the scrollbars
+set guioptions-=r
+set guioptions-=L
+
+" Keep NERDTree window fixed between multiple toggles
+set winfixwidth
+nmap <C-i> :NERDTreeToggle<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    UltiSnips    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YouCompleteMe and UltiSnips compatibility, with the helper of supertab
+" (via http://stackoverflow.com/a/22253548/1626737)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsSnippetsDir = $HOME . '/dotfiles/vim/UltiSnips'
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    NERDCommenter    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" map <leader>c :call NERDComment(0, "invert")<cr>
+" nmap <leader>c :call NERDComment(0, "invert")<cr>
+" vmap <leader>c :call NERDComment(0, "invert")<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    Molokai    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" During installation the molokai colorscheme might not be avalable
+if filereadable(globpath(&rtp, 'colors/molokai.vim'))
+    colorscheme molokai
+else
+    colorscheme default
+endif
+
