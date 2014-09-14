@@ -8,51 +8,51 @@ let mapleader = ","
 let maplocalleader = "\\"
 
 " Setting up Vundle - the vim plugin bundler
-    let vundleInstalled=1
-    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-    if !filereadable(vundle_readme)
-        echo "Installing Vundle.."
-        echo ""
-        silent !mkdir -p ~/.vim/bundle
-        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-        let vundleInstalled=0
-    endif
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
-    Bundle 'gmarik/vundle'
+let vundleInstalled=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let vundleInstalled=0
+endif
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
 
-    "Add your bundles here
-    Bundle 'https://github.com/tpope/vim-fugitive'
-    Bundle 'scrooloose/nerdtree'
-    " Disable the scrollbars (NERDTree)
-    set guioptions-=r
-    set guioptions-=L
+"Add your bundles here
+Bundle 'https://github.com/tpope/vim-fugitive'
+Bundle 'scrooloose/nerdtree'
+" Disable the scrollbars (NERDTree)
+set guioptions-=r
+set guioptions-=L
 
-    " Keep NERDTree window fixed between multiple toggles
-    set winfixwidth
-    nmap <C-i> :NERDTreeToggle<CR>
-    Bundle 'bling/vim-airline'
-    Bundle 'scrooloose/nerdcommenter'
-    map <leader>c :call NERDComment(0, "invert")<cr>
-    nmap <leader>c :call NERDComment(0, "invert")<cr>
-    vmap <leader>c :call NERDComment(0, "invert")<cr>
-    Bundle 'Valloric/YouCompleteMe'
-    Bundle 'tpope/vim-surround'
+" Keep NERDTree window fixed between multiple toggles
+set winfixwidth
+nmap <C-i> :NERDTreeToggle<cr>
+Bundle 'bling/vim-airline'
+Bundle 'scrooloose/nerdcommenter'
+map <leader>c :call NERDComment(0, "invert")<cr>
+nmap <leader>c :call NERDComment(0, "invert")<cr>
+vmap <leader>c :call NERDComment(0, "invert")<cr>
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'tpope/vim-surround'
 
-    " Color
-    Bundle 'tomasr/molokai'
-    " During installation the molokai colorscheme might not be avalable
-    if filereadable(globpath(&rtp, 'colors/molokai.vim'))
-      colorscheme molokai
-    else
-      colorscheme default
-    endif
+" Color
+Bundle 'tomasr/molokai'
+" During installation the molokai colorscheme might not be avalable
+if filereadable(globpath(&rtp, 'colors/molokai.vim'))
+    colorscheme molokai
+else
+    colorscheme default
+endif
 
-    if vundleInstalled == 0
-        echo "Installing Bundles, please ignore key map error messages"
-        echo ""
-        :BundleInstall
-    endif
+if vundleInstalled == 0
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    :BundleInstall
+endif
 " Setting up Vundle - the vim plugin bundler end
 
 filetype plugin indent on
@@ -91,10 +91,10 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jp
 set wildmenu
 
 if has('persistent_undo')
-  set undodir=~/.vim/tmp/undo//     " undo files
-  set undofile
-  set undolevels=3000
-  set undoreload=10000
+    set undodir=~/.vim/tmp/undo//     " undo files
+    set undofile
+    set undolevels=3000
+    set undoreload=10000
 endif
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
@@ -151,7 +151,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " better ESC
-inoremap jj <Esc>
+inoremap jj <esc>
 
 set autoread
 set encoding=utf-8
@@ -186,14 +186,14 @@ nnoremap ; :
 " If the current buffer has never been saved, it will have no name,
 " call the file browser to save it, otherwise just save it.
 "command -nargs=0 -bar Update if &modified
-                           "\|    if empty(bufname('%'))
-                           "\|        browse confirm write
-                           "\|    else
-                           "\|        confirm write
-                           "\|    endif
-                           "\|endif
-"nnoremap <silent> <C-S> :<C-u>Update<CR>
-"inoremap <c-s> <c-o>:Update<CR>
+"\|    if empty(bufname('%'))
+"\|        browse confirm write
+"\|    else
+"\|        confirm write
+"\|    endif
+"\|endif
+"nnoremap <silent> <C-S> :<C-u>Update<cr>
+"inoremap <c-s> <c-o>:Update<cr>
 map <C-v> "+p
 vmap <C-c> "+y
 
@@ -206,13 +206,14 @@ if $TMUX == ''
     set clipboard+=unnamed
 endif
 
-map <Leader>w :update<CR>
-nnoremap <Leader>ev <esc>:e ~/dotfiles/vimrc<CR>
-nnoremap <Leader>ez <esc>:e ~/dotfiles/zshrc<CR>
-nnoremap <Leader>et <esc>:e ~/dotfiles/tmux.conf<CR>
+map <Leader>w :update<cr>
+nnoremap <Leader>q <esc>:bd<cr>
+nnoremap <Leader>ev <esc>:e ~/dotfiles/vimrc<cr>
+nnoremap <Leader>ez <esc>:e ~/dotfiles/zshrc<cr>
+nnoremap <Leader>et <esc>:e ~/dotfiles/tmux.conf<cr>
 " Easy buffer navigation
-noremap <C-h> :bprevious<CR>
-noremap <C-l> :bnext<CR>
+noremap <C-h> :bprevious<cr>
+noremap <C-l> :bnext<cr>
 
 " These create newlines like o and O but stay in normal mode
 nnoremap <silent> zj o<Esc>k
@@ -220,13 +221,12 @@ nnoremap <silent> zk O<Esc>
 
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
 " http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
- 
 if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 " Routines
 " Macro for indentation of whole file
@@ -234,19 +234,18 @@ map <F7> mzgg=G`z
 
 " Redefine Janus' fugutive keys
 if hasmapto('<Leader>g')
-  nunmap <leader>g
+    nunmap <leader>g
 endif
-nnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gl :Glog<CR>
-nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gp :Git push<CR>
-nnoremap <leader>ga :Gwrite<CR>
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gl :Glog<cr>
+nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gp :Git push<cr>
+nnoremap <leader>ga :Gwrite<cr>
 
-autocmd Filetype sml nnoremap <buffer> <Leader>rr <esc>:update<Bar>execute '!sml < '.shellescape(@%, 1)<CR>
-autocmd Filetype markdown nnoremap <buffer> <Leader>rr <esc>:update<Bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<CR>
-"execute '!open '.shellescape(expand('%:r'), 1).'.pdf'<CR>
+autocmd Filetype sml nnoremap <buffer> <Leader>rr <esc>:update<Bar>execute '!sml < '.shellescape(@%, 1)<cr>
+autocmd Filetype markdown nnoremap <buffer> <Leader>rr <esc>:update<Bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
 "}}}
 
 au BufNewFile,BufRead *.tig so ~/.vim/tiger.vim
