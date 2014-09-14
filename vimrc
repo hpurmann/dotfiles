@@ -1,4 +1,4 @@
-" File inspired by vimified (https://github.com/zaiste/vimified/)
+" Most commands adopted from vimified (https://github.com/zaiste/vimified/)
 set nocompatible
 filetype on
 filetype off
@@ -7,18 +7,21 @@ set modelines=0
 let mapleader = ","
 let maplocalleader = "\\"
 
-" Setting up Vundle - the vim plugin bundler
-let vundleInstalled=1
+" Vundle Installation
+let vundleInstalled = 1
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+
 if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
+    let vundleInstalled=0
+    echo "Installing Vundle ..."
     echo ""
     silent !mkdir -p ~/.vim/bundle
     silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let vundleInstalled=0
 endif
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
 Bundle 'gmarik/vundle'
 
 "Add your bundles here
@@ -128,6 +131,7 @@ set smartcase
 set showmatch
 set gdefault
 set hlsearch
+set incsearch
 
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
