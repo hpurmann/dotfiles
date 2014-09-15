@@ -67,6 +67,12 @@ set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
 set showbreak=↪
 
+" Mark lines which are too long
+augroup vimrc_autocmds
+  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#111111
+  autocmd BufEnter * match OverLength /\%75v.*/
+augroup END
+
 " Remove timeout when going back to normal mode
 set notimeout
 set ttimeout
@@ -177,7 +183,7 @@ augroup END
 
 " Saving and closing
 nnoremap <Leader>w :update<cr>
-nnoremap <Leader>q <esc>:bd<cr>
+nnoremap <Leader>q :bd<cr>
 
 " Quick editing
 nnoremap <leader>ev :e ~/dotfiles/vimrc<cr>
