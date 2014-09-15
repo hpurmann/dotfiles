@@ -210,8 +210,11 @@ else
 endif
 
 " Routines
-" Macro for indentation of whole file
+" Indentation of whole file
 map <F7> mzgg=G`z
+
+" Toggle spell checking
+map <F5> :setlocal spell! spelllang=en_us<CR>
 
 " Redefine Janus' fugutive keys
 if hasmapto('<Leader>g')
