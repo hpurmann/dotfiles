@@ -26,9 +26,10 @@ Bundle 'bling/vim-airline'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'ervandew/supertab'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'SirVer/ultisnips'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'tomasr/molokai'
+Bundle 'SirVer/ultisnips'
 
 if vundleInstalled == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -137,6 +138,7 @@ noremap <right> <nop>
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 " noremap <C-l> <C-w>l
+
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
@@ -153,19 +155,8 @@ set laststatus=2
 set ruler
 set showcmd
 
-" Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
-
-" Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
-
-" Say no to code folding
+" Disable code folding completely
 set nofoldenable
-
-" Airline powerline font
-" https://github.com/Lokaltog/powerline-fonts/tree/master/Meslo
-set guifont=Meslo\ LG\ M\ for\ Powerline:h12
-let g:airline_powerline_fonts = 1
 
 " Set 3 lines to the cursor - when moving vertically
 set scrolloff=3
@@ -173,27 +164,15 @@ set scrolloff=3
 " Mappings {{{
 
 nnoremap ; :
-" http://vim.wikia.com/wiki/Map_Ctrl-S_to_save_current_or_new_files
-" If the current buffer has never been saved, it will have no name,
-" call the file browser to save it, otherwise just save it.
-"command -nargs=0 -bar Update if &modified
-"\|    if empty(bufname('%'))
-"\|        browse confirm write
-"\|    else
-"\|        confirm write
-"\|    endif
-"\|endif
-"nnoremap <silent> <C-S> :<C-u>Update<cr>
-"inoremap <c-s> <c-o>:Update<cr>
 
 augroup MyAutoCmd
     autocmd!
-    autocmd MyAutoCmd BufWritePost ~/dotfiles/vimrc nested source $MYVIMRC
+    autocmd MyAutoCmd BufWritePost vimrc nested source $MYVIMRC
 augroup END
 
-if $TMUX == ''
-    set clipboard+=unnamed
-endif
+" if $TMUX == ''
+    " set clipboard+=unnamed
+" endif
 
 " Saving and closing
 nnoremap <Leader>w :update<cr>
@@ -222,6 +201,7 @@ else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
 " Routines
 " Macro for indentation of whole file
 map <F7> mzgg=G`z
@@ -292,4 +272,19 @@ if filereadable(globpath(&rtp, 'colors/molokai.vim'))
 else
     colorscheme default
 endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    Airline    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Airline powerline font
+" https://github.com/Lokaltog/powerline-fonts/tree/master/Meslo
+set guifont=Meslo\ LG\ M\ for\ Powerline:h12
+let g:airline_powerline_fonts = 1
+
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 
