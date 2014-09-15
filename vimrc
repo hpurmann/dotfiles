@@ -30,6 +30,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tomasr/molokai'
 Bundle 'SirVer/ultisnips'
+Bundle 'kien/ctrlp.vim'
 
 if vundleInstalled == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -288,3 +289,8 @@ let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    CtrlP    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nnoremap <Leader>o :CtrlP<cr>
