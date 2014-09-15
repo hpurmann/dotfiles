@@ -258,9 +258,9 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "                     ***    NERDCommenter    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" map <leader>c :call NERDComment(0, "invert")<cr>
-" nmap <leader>c :call NERDComment(0, "invert")<cr>
-" vmap <leader>c :call NERDComment(0, "invert")<cr>
+map <leader>cc :call NERDComment(0, "invert")<cr>
+nmap <leader>cc :call NERDComment(0, "invert")<cr>
+vmap <leader>cc :call NERDComment(0, "invert")<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    Molokai    ***
