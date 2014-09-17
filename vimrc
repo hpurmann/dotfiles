@@ -31,6 +31,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tomasr/molokai'
 Bundle 'SirVer/ultisnips'
 Bundle 'kien/ctrlp.vim'
+Bundle 'benmills/vimux'
 
 if vundleInstalled == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -56,7 +57,7 @@ set number
 set autoindent
 set tabstop=4
 set softtabstop=4
-set textwidth=80
+"set textwidth=80
 set shiftwidth=4
 set expandtab
 set wrap
@@ -68,10 +69,10 @@ set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
 set showbreak=↪
 
 " Mark lines which are too long
-augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#111111
-  autocmd BufEnter * match OverLength /\%75v.*/
-augroup END
+" augroup vimrc_autocmds
+  " autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#111111
+  " autocmd BufEnter * match OverLength /\%75v.*/
+" augroup END
 
 " Remove timeout when going back to normal mode
 set notimeout
@@ -214,7 +215,10 @@ endif
 map <F7> mzgg=G`z
 
 " Toggle spell checking
-map <F5> :setlocal spell! spelllang=en_us<CR>
+nnoremap <F5> :setlocal spell! spelllang=en_us<CR>
+
+nnoremap j gj
+nnoremap k gk
 
 " Redefine Janus' fugutive keys
 if hasmapto('<Leader>g')
@@ -228,9 +232,15 @@ nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gp :Git push<cr>
 nnoremap <leader>ga :Gwrite<cr>
 
-autocmd Filetype sml nnoremap <buffer> <Leader>rr <esc>:update<Bar>execute '!sml < '.shellescape(@%, 1)<cr>
-autocmd Filetype markdown nnoremap <buffer> <Leader>rr <esc>:update<Bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
+" Filetype specific mapping (executing)
+function! PwdToFile()
+    :lcd %:p:h
+endfunction
+
+autocmd Filetype sml nnoremap <buffer> <Leader>rr :update<Bar>:call PwdToFile()<bar>execute '!sml < '.shellescape(@%, 1)<cr>
+autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call PwdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
 "}}}
+autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call PwdToFile()<bar>:call VimuxRunCommand("cd ".shellescape(expand('%:p:h'), 1)." && latexmk -pdf ".shellescape(@%, 1))<cr>
 
 au BufNewFile,BufRead *.tig so ~/dotfiles/vim/syntax/tiger.vim
 
