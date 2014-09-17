@@ -171,8 +171,6 @@ set scrolloff=3
 
 " Mappings {{{
 
-nnoremap ; :
-
 augroup MyAutoCmd
     autocmd!
     autocmd MyAutoCmd BufWritePost vimrc nested source $MYVIMRC
@@ -278,9 +276,9 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "                     ***    NERDCommenter    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-map <leader>cc :call NERDComment(0, "invert")<cr>
-nmap <leader>cc :call NERDComment(0, "invert")<cr>
-vmap <leader>cc :call NERDComment(0, "invert")<cr>
+nnoremap <leader>cc :call NERDComment(0, "invert")<cr>
+nnoremap <leader>cc :call NERDComment(0, "invert")<cr>
+vnoremap <leader>cc :call NERDComment(0, "invert")<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    Molokai    ***
