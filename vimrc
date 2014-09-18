@@ -46,6 +46,23 @@ syntax on
 let mapleader = ","
 let maplocalleader = "\\"
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    Custom functions    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Filetype specific mapping (executing)
+function! PwdToFile()
+    :lcd %:p:h
+endfunction
+
+function! VimuxRunCommandInDir(command, useFile)
+    let l:file = ""
+    if a:useFile ==# 1
+        let l:file = shellescape(expand('%:t'), 1)
+    endif
+    call VimuxRunCommand("cd ".shellescape(expand('%:p:h'), 1)." && ".a:command." ".l:file)
+endfunction
+
 " It defines where to look for the buffer user demanding (current window, all
 " windows in other tabs, or nowhere, i.e. open file from scratch every time) and
 " how to open the buffer (in the new split, tab, or in the current window).
@@ -227,18 +244,15 @@ nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gl :Glog<cr>
 nnoremap <leader>gc :Gcommit<cr>
-nnoremap <leader>gp :Git push<cr>
+nnoremap <leader>gp :call VimuxRunCommandInDir("git push", 0)<cr>
 nnoremap <leader>ga :Gwrite<cr>
 
-" Filetype specific mapping (executing)
-function! PwdToFile()
-    :lcd %:p:h
-endfunction
 
 autocmd Filetype sml nnoremap <buffer> <Leader>rr :update<Bar>:call PwdToFile()<bar>execute '!sml < '.shellescape(@%, 1)<cr>
 autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call PwdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
 "}}}
-autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call PwdToFile()<bar>:call VimuxRunCommand("cd ".shellescape(expand('%:p:h'), 1)." && latexmk -pdf ".shellescape(@%, 1))<cr>
+autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
+
 
 au BufNewFile,BufRead *.tig so ~/dotfiles/vim/syntax/tiger.vim
 
@@ -311,5 +325,10 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 nnoremap <Leader>o :CtrlP<cr>
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 let g:ctrlp_use_caching = 0
+
+" Sane Ignore For ctrlp
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
+    \ 'file': '\.exe$\|\.so$\|\.dat$'
+    \ }
