@@ -12,11 +12,20 @@ $ cd ~/dotfiles
 $ ./makesymlinks.sh
 ```
 
-## YouCompleteMe
 
-You have to compile YouCompleteMe after installing.
+## Plugins
+
+These plugins need special treatment to get working.
+
+### YouCompleteMe
 
 ```
 $ cd ~/dotfiles/vim/bundle/YouCompleteMe/
 $ ./install.sh
+```
+
+### The Silver Searcher
+
+```
+$ brew install the_silver_searcher
 ```
