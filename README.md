@@ -12,6 +12,11 @@ $ cd ~/dotfiles
 $ ./makesymlinks.sh
 ```
 
+## Clipboard
+
+```
+$ brew install reattach-to-user-namespace
+```
 
 ## Plugins
 

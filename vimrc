@@ -211,6 +211,11 @@ nnoremap <Leader>es :UltiSnipsEdit<cr>
 noremap <C-h> :bprevious<cr>
 noremap <C-l> :bnext<cr>
 
+" Bind copy to clipboard
+nnoremap <Leader>p "+p
+vnoremap <Leader>y "+y
+
+
 " These create newlines like o and O but stay in normal mode
 nnoremap <silent> zj o<Esc>k
 nnoremap <silent> zk O<Esc>
@@ -252,6 +257,7 @@ autocmd Filetype sml nnoremap <buffer> <Leader>rr :update<Bar>:call PwdToFile()<
 autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call PwdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
 "}}}
 autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
+nnoremap <silent> <Leader>rt :update<Bar>:call VimuxRunCommand('cd ~/dev/compilation/handins/03-parsing && make standalone && mv tigerc.x86-darwin tigerc.x86-linux && ./tigerc '.shellescape(expand('%:t:r'), 1))<cr>
 
 
 au BufNewFile,BufRead *.tig so ~/dotfiles/vim/syntax/tiger.vim
