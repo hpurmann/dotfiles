@@ -31,7 +31,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tomasr/molokai'
 Bundle 'SirVer/ultisnips'
 Bundle 'kien/ctrlp.vim'
-Bundle 'benmills/vimux'
+Bundle 'hpurmann/vimux'
 
 if vundleInstalled == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -51,7 +51,7 @@ let maplocalleader = "\\"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Filetype specific mapping (executing)
-function! PwdToFile()
+function! CdToFile()
     :lcd %:p:h
 endfunction
 
@@ -215,10 +215,12 @@ noremap <C-l> :bnext<cr>
 nnoremap <Leader>p "+p
 vnoremap <Leader>y "+y
 
-
 " These create newlines like o and O but stay in normal mode
 nnoremap <silent> zj o<Esc>k
 nnoremap <silent> zk O<Esc>
+
+nnoremap cd :call CdToFile()<cr>
+nnoremap <Leader>cd :call VimuxRunCommandInDir(":", 0)<cr>
 
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
 " http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
@@ -253,14 +255,15 @@ nnoremap <leader>gp :call VimuxRunCommandInDir("git push", 0)<cr>
 nnoremap <leader>ga :Gwrite<cr>
 
 
-autocmd Filetype sml nnoremap <buffer> <Leader>rr :update<Bar>:call PwdToFile()<bar>execute '!sml < '.shellescape(@%, 1)<cr>
-autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call PwdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
+autocmd Filetype sml nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!sml < '.shellescape(@%, 1)<cr>
+autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
 "}}}
 autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
 nnoremap <silent> <Leader>rt :update<Bar>:call VimuxRunCommand('cd ~/dev/compilation/handins/03-parsing && make standalone && mv tigerc.x86-darwin tigerc.x86-linux && ./tigerc '.shellescape(expand('%:t:r'), 1))<cr>
 
 
 au BufNewFile,BufRead *.tig so ~/dotfiles/vim/syntax/tiger.vim
+au BufNewFile,BufRead *.grm  setf sml
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    PLUGINS    ***
