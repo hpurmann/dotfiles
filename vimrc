@@ -55,14 +55,6 @@ function! CdToFile()
     :lcd %:p:h
 endfunction
 
-function! VimuxRunCommandInDir(command, useFile)
-    let l:file = ""
-    if a:useFile ==# 1
-        let l:file = shellescape(expand('%:t'), 1)
-    endif
-    call VimuxRunCommand("cd ".shellescape(expand('%:p:h'), 1)." && ".a:command." ".l:file)
-endfunction
-
 " It defines where to look for the buffer user demanding (current window, all
 " windows in other tabs, or nowhere, i.e. open file from scratch every time) and
 " how to open the buffer (in the new split, tab, or in the current window).
@@ -247,19 +239,23 @@ if hasmapto('<Leader>g')
     nunmap <leader>g
 endif
 nnoremap <leader>gb :Gblame<cr>
-nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gl :Glog<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gx :Gremove<cr>
+nnoremap <leader>gm :Gmove<space>
+nnoremap <leader>gr :Gread<cr>
+nnoremap <leader>ga :Gwrite<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gp :call VimuxRunCommandInDir("git push", 0)<cr>
-nnoremap <leader>ga :Gwrite<cr>
+nnoremap <leader>go :call VimuxRunCommandInDir("git pull", 0)<cr>
 
 
 autocmd Filetype sml nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!sml < '.shellescape(@%, 1)<cr>
 autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
 "}}}
 autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
-nnoremap <silent> <Leader>rt :update<Bar>:call VimuxRunCommand('cd ~/dev/compilation/handins/03-parsing && make standalone && mv tigerc.x86-darwin tigerc.x86-linux && ./tigerc '.shellescape(expand('%:t:r'), 1))<cr>
+nnoremap <silent> <Leader>ra :call VimuxRunCommandInDir('./runtests custom 2', 0)<cr>
 
 
 au BufNewFile,BufRead *.tig so ~/dotfiles/vim/syntax/tiger.vim
