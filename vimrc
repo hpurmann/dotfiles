@@ -238,6 +238,10 @@ nnoremap k gk
 if hasmapto('<Leader>g')
     nunmap <leader>g
 endif
+
+
+
+
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gl :Glog<cr>
