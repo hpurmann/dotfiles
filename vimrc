@@ -238,10 +238,6 @@ nnoremap k gk
 if hasmapto('<Leader>g')
     nunmap <leader>g
 endif
-
-
-
-
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gl :Glog<cr>
@@ -347,9 +343,3 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
-
-" Sane Ignore For ctrlp
-" let g:ctrlp_custom_ignore = {
-    " \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
-    " \ 'file': '\.exe$\|\.so$\|\.dat$'
-    " \ }
