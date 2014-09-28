@@ -255,7 +255,7 @@ autocmd Filetype sml nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<b
 autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
 "}}}
 autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
-nnoremap <silent> <Leader>ra :call VimuxRunCommandInDir('./runtests custom 2', 0)<cr>
+nnoremap <silent> <Leader>ra :call VimuxRunCommand("cd ~/dev/compilation/handins/03-parsing && ./runtests custom 2")<cr>
 
 
 au BufNewFile,BufRead *.tig so ~/dotfiles/vim/syntax/tiger.vim
