@@ -66,11 +66,15 @@ set number
 set autoindent
 set tabstop=4
 set softtabstop=4
-"set textwidth=80
 set shiftwidth=4
 set expandtab
+"set formatoptions=qrn1
+"set formatoptions-=tc
+set fo-=t
+
 set wrap
-set formatoptions=qrn1
+" this turns off physical line wrapping (ie: automatic insertion of newlines)
+set textwidth=0 wrapmargin=0
 
 " Show whitespace characters
 set list
@@ -145,10 +149,15 @@ noremap <leader><space> :noh<cr>:call clearmatches()<cr>
 " }}}
 
 " Don't use arrow keys - they shouldn't be touched in vim
-noremap <left> <nop>
-noremap <up> <nop>
-noremap <down> <nop>
-noremap <right> <nop>
+nnoremap <left> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <right> <nop>
+
+inoremap <left> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <right> <nop>
 
 " Easy splitted window navigation
 " noremap <C-h> <C-w>h
@@ -200,8 +209,8 @@ nnoremap <leader>et :e ~/dotfiles/tmux.conf<cr>
 nnoremap <Leader>es :UltiSnipsEdit<cr>
 
 " Easy buffer navigation
-noremap <C-h> :bprevious<cr>
-noremap <C-l> :bnext<cr>
+nnoremap <C-h> :bprevious<cr>
+nnoremap <C-l> :bnext<cr>
 
 " Bind copy to clipboard
 nnoremap <Leader>p "+p
@@ -255,7 +264,7 @@ autocmd Filetype sml nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<b
 autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
 "}}}
 autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
-nnoremap <silent> <Leader>ra :call VimuxRunCommand("cd ~/dev/compilation/handins/03-parsing && ./runtests custom 2")<cr>
+nnoremap <silent> <Leader>ra :call VimuxRunCommand("cd ~/dev/compilation/handins/03-parsing && ./runtests custom 3")<cr>
 
 
 au BufNewFile,BufRead *.tig so ~/dotfiles/vim/syntax/tiger.vim
