@@ -208,6 +208,9 @@ nnoremap <leader>ez :e ~/dotfiles/zshrc<cr>
 nnoremap <leader>et :e ~/dotfiles/tmux.conf<cr>
 nnoremap <Leader>es :UltiSnipsEdit<cr>
 
+" Convert tabs to spaces in entire file
+nnoremap <leader><tab> :%retab<cr>
+
 " Easy buffer navigation
 nnoremap <C-h> :bprevious<cr>
 nnoremap <C-l> :bnext<cr>
@@ -259,12 +262,13 @@ nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gp :call VimuxRunCommandInDir("git push", 0)<cr>
 nnoremap <leader>go :call VimuxRunCommandInDir("git pull", 0)<cr>
 
-
+" Running things
 autocmd Filetype sml nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!sml < '.shellescape(@%, 1)<cr>
 autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
 "}}}
 autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
 nnoremap <silent> <Leader>ra :call VimuxRunCommand("cd ~/dev/compilation/handins/03-parsing && ./runtests custom 3")<cr>
+
 
 
 au BufNewFile,BufRead *.tig so ~/dotfiles/vim/syntax/tiger.vim
