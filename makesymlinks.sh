@@ -22,9 +22,18 @@ echo -n "Changing to the $dir directory ..."
 cd $dir
 echo "done"
 
+# create backup directories
+cd "vim"
+mkdir "tmp"
+cd "tmp"
+mkdir "undo"
+mkdir "backup"
+mkdir "swap"
+
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
 for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
+    # TODO if file exists
     mv ~/.$file ~/dotfiles_old/
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
