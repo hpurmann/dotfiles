@@ -1,6 +1,13 @@
+# User configuration
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# Set language
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-
+#
 # Using robby's awesome theme
 ZSH_THEME="robbyrussell"
 
@@ -13,6 +20,3 @@ DISABLE_AUTO_TITLE=true
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
-export PATH="/Users/hpurmann/Library/Haskell/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Library/Haskell/bin:/usr/texbin:/opt/local:/opt/local/bin"
