@@ -43,6 +43,9 @@ endif
 filetype plugin indent on
 syntax on
 
+scriptencoding utf-8
+set encoding=utf-8
+
 let mapleader = ","
 let maplocalleader = "\\"
 
@@ -79,7 +82,7 @@ set textwidth=0 wrapmargin=0
 " Show whitespace characters
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
-set showbreak=↪
+let &showbreak = '↳ '
 
 " Mark lines which are too long
 " augroup vimrc_autocmds
@@ -96,6 +99,7 @@ set ttimeoutlen=10
 set visualbell
 
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc,tmp,*.scssc
+
 set wildmenu
 
 " Set up undo-, backup- and swapfiles
@@ -173,7 +177,6 @@ vnoremap > >gv
 inoremap jj <esc>
 
 set autoread
-set encoding=utf-8
 set backspace=indent,eol,start
 set hidden
 set history=1000
@@ -198,8 +201,9 @@ augroup END
     " set clipboard+=unnamed
 " endif
 
-" Saving and closing
+" Saving, opening and closing
 nnoremap <Leader>w :update<cr>
+nnoremap <Leader>n :enew<cr>
 nnoremap <Leader>q :bd<cr>
 
 " Quick editing
@@ -267,11 +271,13 @@ autocmd Filetype sml nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<b
 autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
 "}}}
 autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
-nnoremap <silent> <Leader>ra :call VimuxRunCommand("cd ~/dev/compilation/handins/03-parsing && ./runtests custom 3")<cr>
+nnoremap <silent> <Leader>ra :call VimuxRunCommand("cd ~/dev/compilation/handins/04-semantic && ./runtests custom 4")<cr>
 
 
 
+au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.tig so ~/dotfiles/vim/syntax/tiger.vim
+au BufNewFile,BufRead *.rs set filetype=rust
 au BufNewFile,BufRead *.grm  setf sml
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
