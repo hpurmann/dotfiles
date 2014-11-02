@@ -32,6 +32,7 @@ Bundle 'tomasr/molokai'
 Bundle 'SirVer/ultisnips'
 Bundle 'kien/ctrlp.vim'
 Bundle 'hpurmann/vimux'
+Bundle 'kchmck/vim-coffee-script'
 
 if vundleInstalled == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -241,11 +242,14 @@ else
 endif
 
 " Routines
-" Indentation of whole file
-map <F7> mzgg=G`z
-
 " Toggle spell checking
 nnoremap <F5> :setlocal spell! spelllang=en_us<CR>
+
+" Remove all trailing whitespaces
+nnoremap <silent> <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" Indentation of whole file
+nnoremap <F7> mzgg=G`z
 
 nnoremap j gj
 nnoremap k gk
@@ -272,7 +276,7 @@ autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFil
 "}}}
 autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
 nnoremap <silent> <Leader>ra :call VimuxRunCommand("cd ~/dev/compilation/handins/04-semantic && ./runtests custom 4")<cr>
-
+nnoremap <silent> <Leader>rc :call VimuxRunCommand("cd ~/dev/compilation/handins/04-semantic && ./runtests custom 4 test_loops")<cr>
 
 
 au BufNewFile,BufRead *.md set filetype=markdown
