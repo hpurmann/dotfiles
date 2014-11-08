@@ -14,6 +14,9 @@ ZSH_THEME="robbyrussell"
 # Always start tmux in 256 color mode
 alias tmux="TERM=screen-256color-bce tmux"
 
+# Fix ctags 'illegal option' error
+alias ctags="`brew --prefix`/bin/ctags"
+
 # Name windows in tmux
 DISABLE_AUTO_TITLE=true
 
