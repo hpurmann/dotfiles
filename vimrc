@@ -273,14 +273,17 @@ nnoremap <leader>go :call VimuxRunCommandInDir("git pull", 0)<cr>
 " Running things
 autocmd Filetype sml nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!sml < '.shellescape(@%, 1)<cr>
 autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
+autocmd Filetype coffee nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommand('mocha --compilers coffee:coffee-script/register')<cr>
+autocmd Filetype javascript nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommand('jasmine-node .')<cr>
+
 "}}}
 autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
 nnoremap <silent> <Leader>ra :call VimuxRunCommand("cd ~/dev/compilation/handins/04-semantic && ./runtests custom 4")<cr>
-nnoremap <silent> <Leader>rc :call VimuxRunCommand("cd ~/dev/compilation/handins/04-semantic && ./runtests custom 4 test_loops")<cr>
+nnoremap <silent> <Leader>rc :call VimuxRunCommand("cd ~/dev/compilation/handins/04-semantic && ./runtests custom 4 test_break")<cr>
 
 
 au BufNewFile,BufRead *.md set filetype=markdown
-au BufNewFile,BufRead *.tig so ~/dotfiles/vim/syntax/tiger.vim
+au BufNewFile,BufRead *.tig set filetype=tiger
 au BufNewFile,BufRead *.rs set filetype=rust
 au BufNewFile,BufRead *.grm  setf sml
 
