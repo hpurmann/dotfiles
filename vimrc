@@ -375,3 +375,15 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    Project-wide settings ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Enables per-project vimrc config files
+let b:thisdir=expand("%:p:h")
+let b:vim=b:thisdir."/.vimrc.local"
+if (filereadable(b:vim))
+    execute "source ".b:vim
+endif
+
