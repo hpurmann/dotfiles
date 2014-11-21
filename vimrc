@@ -177,7 +177,8 @@ vnoremap < <gv
 vnoremap > >gv
 
 " better ESC
-inoremap jj <esc>
+inoremap jk <esc>
+
 
 set autoread
 set backspace=indent,eol,start
