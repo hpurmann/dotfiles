@@ -61,9 +61,6 @@ function! CdToFile()
     :lcd %:p:h
 endfunction
 
-" It defines where to look for the buffer user demanding (current window, all
-" windows in other tabs, or nowhere, i.e. open file from scratch every time) and
-" how to open the buffer (in the new split, tab, or in the current window).
 
 " This orders Vim to open the buffer.
 set switchbuf=useopen
@@ -280,7 +277,10 @@ nnoremap <leader>go :call VimuxRunCommandInDir("git pull", 0)<cr>
 autocmd Filetype sml nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!sml < '.shellescape(@%, 1)<cr>
 autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
 autocmd Filetype coffee nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommand('mocha --compilers coffee:coffee-script/register')<cr>
-autocmd Filetype javascript nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommand('jasmine-node .')<cr>
+
+" Exercism test running
+autocmd Filetype javascript nnoremap <buffer> <Leader>re :update<Bar>:call VimuxRunCommand('jasmine-node .')<cr>
+autocmd Filetype coffee nnoremap <buffer> <Leader>re :update<Bar>:call VimuxRunCommand('jasmine-node --coffee .')<cr>
 
 "}}}
 autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
