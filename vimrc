@@ -28,11 +28,13 @@ Bundle 'ervandew/supertab'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-repeat'
 Bundle 'tomasr/molokai'
 Bundle 'SirVer/ultisnips'
 Bundle 'kien/ctrlp.vim'
 Bundle 'hpurmann/vimux'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'scrooloose/syntastic'
 
 if vundleInstalled == 0
     echo "Installing Bundles, please ignore key map error messages"
