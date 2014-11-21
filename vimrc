@@ -284,8 +284,8 @@ autocmd Filetype coffee nnoremap <buffer> <Leader>re :update<Bar>:call VimuxRunC
 
 "}}}
 autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
-nnoremap <silent> <Leader>ra :call VimuxRunCommand("cd ~/dev/compilation/handins/04-semantic && ./runtests custom 4")<cr>
-nnoremap <silent> <Leader>rc :call VimuxRunCommand("cd ~/dev/compilation/handins/04-semantic && ./runtests custom 4 test_break")<cr>
+nnoremap <silent> <Leader>ra :call VimuxRunCommand("cd ~/dev/compilation/handins/05-ir && ./runtests custom 5")<cr>
+nnoremap <silent> <Leader>rc :call VimuxRunCommand("cd ~/dev/compilation/handins/05-ir && ./runtests custom 5 test_literals")<cr>
 
 
 au BufNewFile,BufRead *.md set filetype=markdown
