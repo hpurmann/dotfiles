@@ -84,12 +84,6 @@ set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
 let &showbreak = '↳ '
 
-" Mark lines which are too long
-" augroup vimrc_autocmds
-  " autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#111111
-  " autocmd BufEnter * match OverLength /\%75v.*/
-" augroup END
-
 " Remove timeout when going back to normal mode
 set notimeout
 set ttimeout
