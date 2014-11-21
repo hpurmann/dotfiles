@@ -257,6 +257,9 @@ nnoremap <F7> mzgg=G`z
 nnoremap j gj
 nnoremap k gk
 
+" Replace command
+nnoremap R Plde
+
 " Redefine Janus' fugutive keys
 if hasmapto('<Leader>g')
     nunmap <leader>g
