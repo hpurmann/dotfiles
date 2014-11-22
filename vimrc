@@ -33,6 +33,7 @@ Plugin 'tomasr/molokai'
 Plugin 'SirVer/ultisnips'
 Plugin 'kien/ctrlp.vim'
 Plugin 'hpurmann/vimux'
+Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'scrooloose/syntastic'
 
