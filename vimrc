@@ -19,22 +19,22 @@ endif
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/nerdtree'
-Bundle 'bling/vim-airline'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'ervandew/supertab'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-repeat'
-Bundle 'tomasr/molokai'
-Bundle 'SirVer/ultisnips'
-Bundle 'kien/ctrlp.vim'
-Bundle 'hpurmann/vimux'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'scrooloose/syntastic'
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-repeat'
+Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'tomasr/molokai'
+Plugin 'SirVer/ultisnips'
+Plugin 'kien/ctrlp.vim'
+Plugin 'hpurmann/vimux'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'scrooloose/syntastic'
 
 if vundleInstalled == 0
     echo "Installing Bundles, please ignore key map error messages"
