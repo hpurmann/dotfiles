@@ -371,6 +371,17 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    Syntastics    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Open Syntastic error window
+nnoremap <leader>zz :Error<cr>:lopen<cr>
+nnoremap <leader>zn :lnext<cr>
+nnoremap <leader>zp :lprev<cr>
+let g:syntastic_always_populate_loc_list = 1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    Project-wide settings ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
