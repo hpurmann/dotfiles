@@ -32,6 +32,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomasr/molokai'
 Plugin 'SirVer/ultisnips'
 Plugin 'kien/ctrlp.vim'
+
 Plugin 'benmills/vimux'
 Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
@@ -217,6 +218,7 @@ nnoremap <C-l> :bnext<cr>
 
 " Bind copy to clipboard
 nnoremap <Leader>p "+p
+nnoremap <Leader>P "+P
 vnoremap <Leader>y "+y
 
 " These create newlines like o and O but stay in normal mode
@@ -280,7 +282,7 @@ autocmd Filetype coffee nnoremap <buffer> <Leader>re :update<Bar>:call VimuxRunC
 "}}}
 autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
 nnoremap <silent> <Leader>ra :call VimuxRunCommand("cd ~/dev/compilation/handins/05-ir && ./runtests custom 5")<cr>
-nnoremap <silent> <Leader>rc :call VimuxRunCommand("cd ~/dev/compilation/handins/05-ir && ./runtests custom 5 test_literals")<cr>
+nnoremap <silent> <Leader>rc :call VimuxRunCommand("cd ~/dev/compilation/handins/04-semantic && ./runtests custom 4 test_break")<cr>
 
 
 au BufNewFile,BufRead *.md set filetype=markdown
