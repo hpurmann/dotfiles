@@ -32,7 +32,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomasr/molokai'
 Plugin 'SirVer/ultisnips'
 Plugin 'kien/ctrlp.vim'
-
+Plugin 'klen/python-mode'
 Plugin 'benmills/vimux'
 Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
