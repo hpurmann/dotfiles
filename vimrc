@@ -259,7 +259,6 @@ if hasmapto('<Leader>g')
 endif
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gd :Gdiff<cr>
-nnoremap <leader>gl :Glog<cr>
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gx :Gremove<cr>
 nnoremap <leader>gm :Gmove<space>
@@ -267,7 +266,7 @@ nnoremap <leader>gr :Gread<cr>
 nnoremap <leader>ga :Gwrite<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gp :call VimuxRunCommandInDir("git push", 0)<cr>
-nnoremap <leader>go :call VimuxRunCommandInDir("git pull", 0)<cr>
+nnoremap <leader>gl :call VimuxRunCommandInDir("git pull", 0)<cr>
 
 " Running things
 "autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
