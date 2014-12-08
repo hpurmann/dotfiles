@@ -226,7 +226,6 @@ nnoremap <silent> zj o<Esc>k
 nnoremap <silent> zk O<Esc>
 
 nnoremap cd :call CdToFile()<cr>
-nnoremap <Leader>cd :call VimuxRunCommandInDir(":", 0)<cr>
 
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
 " http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
@@ -271,9 +270,10 @@ nnoremap <leader>gp :call VimuxRunCommandInDir("git push", 0)<cr>
 nnoremap <leader>go :call VimuxRunCommandInDir("git pull", 0)<cr>
 
 " Running things
-autocmd Filetype sml nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!sml < '.shellescape(@%, 1)<cr>
-autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
-autocmd Filetype coffee nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommand('mocha --compilers coffee:coffee-script/register')<cr>
+"autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
+"autocmd Filetype coffee nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommand('mocha --compilers coffee:coffee-script/register')<cr>
+
+nnoremap <Leader>rr :update<Bar>:call VimuxRunLastCommand()<cr>
 
 " Exercism test running
 autocmd Filetype javascript nnoremap <buffer> <Leader>re :update<Bar>:call VimuxRunCommand('jasmine-node .')<cr>
@@ -282,7 +282,7 @@ autocmd Filetype coffee nnoremap <buffer> <Leader>re :update<Bar>:call VimuxRunC
 "}}}
 autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
 nnoremap <silent> <Leader>ra :call VimuxRunCommand("cd ~/dev/compilation/handins/05-ir && ./runtests custom 5")<cr>
-nnoremap <silent> <Leader>rc :call VimuxRunCommand("cd ~/dev/compilation/handins/04-semantic && ./runtests custom 4 test_break")<cr>
+nnoremap <silent> <Leader>rc :call VimuxRunCommand("cd ~/dev/compilation/handins/01-lexical && ./runtests  test_unclosed_string")<cr>
 
 
 au BufNewFile,BufRead *.md set filetype=markdown
@@ -375,14 +375,17 @@ endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                     ***    Syntastics    ***
+"                     ***    Syntastic    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Open Syntastic error window
 nnoremap <leader>zz :Error<cr>:lopen<cr>
 nnoremap <leader>zn :lnext<cr>
 nnoremap <leader>zp :lprev<cr>
+
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_disabled_filetypes=['lex']
+let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    Project-wide settings ***
