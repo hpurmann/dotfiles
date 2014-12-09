@@ -32,7 +32,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomasr/molokai'
 Plugin 'SirVer/ultisnips'
 Plugin 'kien/ctrlp.vim'
-Plugin 'klen/python-mode'
+Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'benmills/vimux'
 Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
@@ -115,6 +115,12 @@ augroup trailing
     au InsertEnter * :set listchars-=trail:␣
     au InsertLeave * :set listchars+=trail:␣
 augroup END
+"
+" When switching buffers, preserve window view.
+if v:version >= 700
+   au BufLeave * if !&diff | let b:winview = winsaveview() | endif
+   au BufEnter * if exists('b:winview') && !&diff | call   winrestview(b:winview) | endif
+endif
 
 " Cursorline {{{
 " Only show cursorline in the current window and in normal mode.
@@ -318,6 +324,12 @@ let g:UltiSnipsSnippetsDir = $HOME . '/dotfiles/vim/UltiSnips'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    YouCompleteMe    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType python setlocal completeopt-=preview
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    NERDCommenter    ***
