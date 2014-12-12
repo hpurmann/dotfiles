@@ -276,7 +276,7 @@ nnoremap <leader>gl :call VimuxRunCommandInDir("git pull", 0)<cr>
 
 " Running things
 "autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
-"autocmd Filetype coffee nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommand('mocha --compilers coffee:coffee-script/register')<cr>
+autocmd Filetype coffee nnoremap <buffer> <Leader>t :update<Bar>:call VimuxRunCommand('mocha --compilers coffee:coffee-script/register')<cr>
 
 nnoremap <Leader>rr :update<Bar>:call VimuxRunLastCommand()<cr>
 
