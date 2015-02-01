@@ -262,7 +262,7 @@ nnoremap k gk
 " Replace command
 nnoremap R Plde
 
-" Redefine Janus' fugutive keys
+" Redefine Janus' fugitive keys
 if hasmapto('<Leader>g')
     nunmap <leader>g
 endif
