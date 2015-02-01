@@ -289,9 +289,6 @@ autocmd Filetype coffee nnoremap <buffer> <Leader>re :update<Bar>:call VimuxRunC
 
 "}}}
 autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
-nnoremap <silent> <Leader>ra :call VimuxRunCommand("cd ~/dev/compilation/handins/05-ir && ./runtests custom 5")<cr>
-nnoremap <silent> <Leader>rc :call VimuxRunCommand("cd ~/dev/compilation/handins/01-lexical && ./runtests  test_unclosed_string")<cr>
-
 
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.tig set filetype=tiger
