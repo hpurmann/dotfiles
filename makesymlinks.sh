@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="vimrc vim tmux.conf zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
+files="vimrc vim tmux.conf zshrc gitconfig oh-my-zsh"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -29,9 +29,6 @@ cd "tmp"
 mkdir "undo"
 mkdir "backup"
 mkdir "swap"
-
-# Set git global ignore
-git config --global core.excludesfile ~/dotfiles/gitignore
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
 for file in $files; do
