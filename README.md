@@ -26,6 +26,7 @@ $ brew install reattach-to-user-namespace
 ### [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 
 ```bash
+$ brew install cmake
 $ cd ~/dotfiles/vim/bundle/YouCompleteMe/
 $ ./install.sh
 ```
