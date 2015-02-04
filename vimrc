@@ -293,6 +293,7 @@ autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunComm
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.tig set filetype=tiger
 au BufNewFile,BufRead *.rs set filetype=rust
+au BufNewFile,BufRead Vagrantfile set filetype=ruby
 au BufNewFile,BufRead *.grm  setf sml
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
