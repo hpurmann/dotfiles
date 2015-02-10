@@ -37,6 +37,8 @@ Plugin 'benmills/vimux'
 Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'scrooloose/syntastic'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'wavded/vim-stylus'
 
 if vundleInstalled == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -222,8 +224,8 @@ nnoremap <Leader>es :UltiSnipsEdit<cr>
 nnoremap <leader><tab> :%retab<cr>
 
 " Easy buffer navigation
-nnoremap <C-h> :bprevious<cr>
-nnoremap <C-l> :bnext<cr>
+nnoremap <C-j> :bprevious<cr>
+nnoremap <C-k> :bnext<cr>
 
 " Bind copy to clipboard
 nnoremap <Leader>p "+p
@@ -294,6 +296,7 @@ au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.tig set filetype=tiger
 au BufNewFile,BufRead *.rs set filetype=rust
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
+au BufNewFile,BufRead *.styl set filetype=stylus
 au BufNewFile,BufRead *.grm  setf sml
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
