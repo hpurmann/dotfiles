@@ -1,5 +1,5 @@
 [user]
-	name = Hendrik Purman
+	name = Hendrik Purmann
 	email = h.purmann@googlemail.com
 [core]
 	excludesfile = /Users/hpurmann/dotfiles/gitignore
@@ -19,3 +19,9 @@
 	autosetuprebase = always
 [branch "master"]
 	rebase = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
