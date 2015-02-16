@@ -39,6 +39,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'scrooloose/syntastic'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'wavded/vim-stylus'
+Plugin 'shime/vim-livedown'
 
 if vundleInstalled == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -403,6 +404,11 @@ nnoremap <leader>zp :lprev<cr>
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_disabled_filetypes=['lex']
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    Livedown    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map gm :call LivedownPreview()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    Project-wide settings ***
