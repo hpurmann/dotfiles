@@ -14,6 +14,9 @@ ZSH_THEME="robbyrussell"
 # Always start tmux in 256 color mode
 alias tmux="TERM=screen-256color-bce tmux"
 
+# stash, pull, stash pop
+alias stashpull="gsta && gl && gstp"
+
 # Quickly exit tmux panes
 alias e="exit"
 
