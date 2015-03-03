@@ -376,8 +376,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 "                     ***    CtrlP    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nnoremap <Leader>o :CtrlP<cr>
-let g:ctrlp_use_caching = 0
+nnoremap <Leader>o :CtrlPBuffer<cr>
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
