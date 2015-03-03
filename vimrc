@@ -40,6 +40,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'wavded/vim-stylus'
 Plugin 'shime/vim-livedown'
+Plugin 'hpurmann/vim-replacyy'
 
 if vundleInstalled == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -65,7 +66,6 @@ let maplocalleader = "\\"
 function! CdToFile()
     :lcd %:p:h
 endfunction
-
 
 " This orders Vim to open the buffer.
 set switchbuf=useopen
@@ -283,8 +283,7 @@ nnoremap <leader>gl :call VimuxRunCommandInDir("git pull", 0)<cr>
 " Running things
 "autocmd Filetype markdown nnoremap <buffer> <Leader>rr :update<Bar>:call CdToFile()<bar>execute '!pandoc '.shellescape(@%, 1).' -o '.shellescape(expand('%:r'), 1).'.pdf'<cr>
 "autocmd Filetype coffee nnoremap <buffer> <Leader>t :update<Bar>:call VimuxRunCommand('mocha --compilers coffee:coffee-script/register')<cr>
-autocmd Filetype coffee nnoremap <buffer> <Leader>t :update<Bar>:call VimuxRunCommand('./test.sh lib/shop')<cr>
-
+autocmd Filetype coffee nnoremap <buffer> <Leader>t :update<Bar>:call VimuxRunCommand('s && make lib/planning-object-model/test')<cr>
 
 nnoremap <Leader>rr :update<Bar>:call VimuxRunLastCommand()<cr>
 
@@ -408,6 +407,13 @@ let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 "                     ***    Livedown    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map gm :call LivedownPreview()<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    CoffeeScript    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"autocmd Filetype coffee nnoremap <buffer> <leader>js :CoffeeCompile<cr>
+"autocmd Filetype coffee vnoremap <buffer> <leader>js :CoffeeCompile<cr>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    Project-wide settings ***
