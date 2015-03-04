@@ -4,7 +4,7 @@ Dotfiles
 My dotfiles. Configured the way I want them to be.
 Clean and purely beautiful.
 
-# Brew Packages
+## Brew Packages
 
 First get [Homebrew](http://brew.sh/).
 
@@ -38,8 +38,4 @@ These plugins need special treatment to get working.
 ```bash
 $ cd ~/dotfiles/vim/bundle/YouCompleteMe/
 $ ./install.sh
-```
-
-
-```bash
 ```
