@@ -8,7 +8,7 @@ brew 'vim'
 # [tmux OSX Clipboard](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard)
 brew 'reattach-to-user-namespace'
 
-# Dependy needed for [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+# Dependency needed for [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 brew 'cmake'
 
 # ag
