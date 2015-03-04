@@ -1,22 +1,21 @@
 " Most commands adopted from vimified (https://github.com/zaiste/vimified/)
-set nocompatible
 filetype on
 filetype off
 set modelines=0
 
 " Vundle Installation
 let vundleInstalled = 1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+let vundle_readme=expand('~/.nvim/bundle/vundle/README.md')
 
 if !filereadable(vundle_readme)
     let vundleInstalled=0
     echo "Installing Vundle ..."
     echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    silent !mkdir -p ~/.nvim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.nvim/bundle/vundle
 endif
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.nvim/bundle/vundle/
 call vundle#rc()
 
 Plugin 'gmarik/vundle'
@@ -51,9 +50,6 @@ endif
 
 filetype plugin indent on
 syntax on
-
-scriptencoding utf-8
-set encoding=utf-8
 
 let mapleader = ","
 let maplocalleader = "\\"
@@ -106,13 +102,13 @@ set wildmode=full
 
 " Set up undo-, backup- and swapfiles
 if has('persistent_undo')
-    set undodir=~/.vim/tmp/undo//     " undo files
+    set undodir=~/.nvim/tmp/undo//     " undo files
     set undofile
     set undolevels=3000
     set undoreload=10000
 endif
-set backupdir=~/.vim/tmp/backup// " backups
-set directory=~/.vim/tmp/swap//   " swap files
+set backupdir=~/.nvim/tmp/backup// " backups
+set directory=~/.nvim/tmp/swap//   " swap files
 set backup
 set noswapfile
 
@@ -201,10 +197,10 @@ set scrolloff=3
 
 " Mappings {{{
 
-augroup MyAutoCmd
-    autocmd!
-    autocmd MyAutoCmd BufWritePost vimrc nested source $MYVIMRC
-augroup END
+"augroup MyAutoCmd
+    "autocmd!
+    "autocmd MyAutoCmd BufWritePost vimrc nested source $MYVIMRC
+"augroup END
 
 " if $TMUX == ''
     " set clipboard+=unnamed
@@ -216,7 +212,7 @@ nnoremap <Leader>n :enew<cr>
 nnoremap <Leader>q :bd<cr>
 
 " Quick editing
-nnoremap <leader>ev :e ~/dotfiles/vimrc<cr>
+nnoremap <leader>ev :e ~/dotfiles/nvimrc<cr>
 nnoremap <leader>ez :e ~/dotfiles/zshrc<cr>
 nnoremap <leader>et :e ~/dotfiles/tmux.conf<cr>
 nnoremap <Leader>es :UltiSnipsEdit<cr>

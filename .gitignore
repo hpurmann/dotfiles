@@ -1,4 +1,10 @@
 oh-my-zsh/
+.netrwhist
+
+# vim
 vim/bundle
 vim/tmp
-.netrwhist
+
+# neovim
+nvim/bundle
+nvim/tmp
