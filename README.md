@@ -4,6 +4,14 @@ Dotfiles
 My dotfiles. Configured the way I want them to be.
 Clean and purely beautiful.
 
+## Installation
+
+```bash
+$ git clone https://github.com/hpurmann/dotfiles.git ~/dotfiles
+$ cd ~/dotfiles
+$ ./install.sh
+```
+
 ## Brew Packages
 
 First get [Homebrew](http://brew.sh/).
@@ -13,14 +21,6 @@ First get [Homebrew](http://brew.sh/).
 ```bash
 $ brew tap Homebrew/brewdler
 $ brew brewdle
-```
-
-## Installation
-
-```bash
-$ git clone https://github.com/hpurmann/dotfiles.git ~/dotfiles
-$ cd ~/dotfiles
-$ ./install.sh
 ```
 
 ## Font
