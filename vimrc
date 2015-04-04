@@ -169,10 +169,8 @@ inoremap <down> <nop>
 inoremap <right> <nop>
 
 " Easy splitted window navigation
-" noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-" noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
