@@ -297,6 +297,8 @@ au BufNewFile,BufRead Vagrantfile set filetype=ruby
 au BufNewFile,BufRead *.styl set filetype=stylus
 au BufNewFile,BufRead *.grm  setf sml
 
+nnoremap <silent> <F4> :exec "se rnu!"<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    PLUGINS    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
