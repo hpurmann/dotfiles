@@ -20,6 +20,9 @@ alias stashpull="git stash && git pull --rebase && git stash pop"
 # Quickly exit tmux panes
 alias e="exit"
 
+# Quickly ssh into vagrant
+alias vash="vagrant ssh"
+
 # Fix ctags 'illegal option' error
 alias ctags="`brew --prefix`/bin/ctags"
 
