@@ -41,6 +41,7 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'wavded/vim-stylus'
 Plugin 'shime/vim-livedown'
 Plugin 'hpurmann/vim-replacyy'
+Plugin 'raichoo/haskell-vim'
 
 if vundleInstalled == 0
     echo "Installing Bundles, please ignore key map error messages"
