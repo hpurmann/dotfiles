@@ -15,7 +15,7 @@ ZSH_THEME="robbyrussell"
 alias tmux="TERM=screen-256color-bce tmux"
 
 # stash, pull, stash pop
-alias stashpull="gsta && gl && gstp"
+alias stashpull="git stash && git pull --rebase && git stash pop"
 
 # Quickly exit tmux panes
 alias e="exit"
