@@ -152,10 +152,6 @@ set gdefault
 set hlsearch
 set incsearch
 
-" Keep search matches in the middle of the window.
-nnoremap n nzzzv
-nnoremap N Nzzzv
-
 " clear search matching
 noremap <leader><space> :noh<cr>:call clearmatches()<cr>
 " }}}
