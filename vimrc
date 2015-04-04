@@ -209,7 +209,7 @@ augroup END
 " Saving, opening and closing
 nnoremap <Leader>w :update<cr>
 nnoremap <Leader>n :enew<cr>
-nnoremap <Leader>q :bd<cr>
+nnoremap <Leader>q :bp\|bd #<cr>
 
 " Quick editing
 nnoremap <leader>ev :e ~/dotfiles/vimrc<cr>
