@@ -179,7 +179,6 @@ vnoremap > >gv
 " better ESC
 inoremap jk <esc>
 
-
 set autoread
 set backspace=indent,eol,start
 set hidden
@@ -200,10 +199,6 @@ augroup MyAutoCmd
     autocmd!
     autocmd MyAutoCmd BufWritePost vimrc nested source $MYVIMRC
 augroup END
-
-" if $TMUX == ''
-    " set clipboard+=unnamed
-" endif
 
 " Saving, opening and closing
 nnoremap <Leader>w :update<cr>
