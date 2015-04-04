@@ -409,8 +409,8 @@ map gm :call LivedownPreview()<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    CoffeeScript    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"autocmd Filetype coffee nnoremap <buffer> <leader>js :CoffeeCompile<cr>
-"autocmd Filetype coffee vnoremap <buffer> <leader>js :CoffeeCompile<cr>
+autocmd Filetype coffee nnoremap <buffer> <leader>js :CoffeeCompile<cr>
+autocmd Filetype coffee vnoremap <buffer> <leader>js :CoffeeCompile<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
