@@ -1,5 +1,5 @@
 # User configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin"
+export PATH="/usr/local/bin:/usr/local/go/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin"
 
 # Set language
 export LC_ALL=en_US.UTF-8
