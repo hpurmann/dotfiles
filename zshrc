@@ -1,6 +1,10 @@
 # User configuration
 export PATH="/usr/local/bin:/usr/local/go/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin"
 
+# GoLang PATH
+export GOPATH=$HOME/dev/go
+export PATH=$PATH:$GOPATH/bin
+
 # Set language
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
