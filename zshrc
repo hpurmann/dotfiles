@@ -1,5 +1,17 @@
-# User configuration
-export PATH="/usr/local/bin:/usr/local/go/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin"
+# Homebrew
+export PATH="/usr/local/bin"
+
+# Go tools
+export PATH=$PATH:"/usr/local/go/bin"
+
+# System binaries
+export PATH=$PATH:"/usr/bin"
+export PATH=$PATH:"/bin"
+export PATH=$PATH:"/usr/sbin"
+export PATH=$PATH:"/sbin"
+
+# LaTex
+export PATH=$PATH:"/usr/texbin"
 
 # GoLang PATH
 export GOPATH=$HOME/dev/go
