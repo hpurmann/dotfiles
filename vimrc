@@ -43,6 +43,7 @@ Plugin 'shime/vim-livedown'
 Plugin 'hpurmann/vim-replacyy'
 Plugin 'raichoo/haskell-vim'
 Plugin 'fatih/vim-go'
+Plugin 'majutsushi/tagbar'
 
 if vundleInstalled == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -412,6 +413,11 @@ autocmd Filetype coffee vnoremap <buffer> <leader>js :CoffeeCompile<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " format with goimports instead of gofmt
 let g:go_fmt_command = "goimports"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    TagBar    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>t :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    Project-wide settings ***
