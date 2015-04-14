@@ -42,6 +42,7 @@ Plugin 'wavded/vim-stylus'
 Plugin 'shime/vim-livedown'
 Plugin 'hpurmann/vim-replacyy'
 Plugin 'raichoo/haskell-vim'
+Plugin 'fatih/vim-go'
 
 if vundleInstalled == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -406,6 +407,11 @@ map gm :LivedownPreview<CR>
 autocmd Filetype coffee nnoremap <buffer> <leader>js :CoffeeCompile<cr>
 autocmd Filetype coffee vnoremap <buffer> <leader>js :CoffeeCompile<cr>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    Golang    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" format with goimports instead of gofmt
+let g:go_fmt_command = "goimports"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    Project-wide settings ***
