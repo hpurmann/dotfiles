@@ -281,6 +281,8 @@ autocmd Filetype coffee nnoremap <buffer> <Leader>re :update<Bar>:call VimuxRunC
 
 "}}}
 autocmd Filetype tex nnoremap <buffer> <Leader>rt :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
+autocmd Filetype go nnoremap <buffer> <Leader>rm :update<Bar>:call VimuxRunCommand('go run main.go')<cr>
+autocmd Filetype go nnoremap <buffer> <Leader>rt :update<Bar>:call VimuxRunCommand('go test -v')<cr>
 
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.tig set filetype=tiger
