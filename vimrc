@@ -327,6 +327,10 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "                     ***    YouCompleteMe    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType python setlocal completeopt-=preview
+let g:ycm_filetype_blacklist = {
+      \ 'tex' : 1,
+      \ 'markdown' : 1
+      \}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    NERDCommenter    ***
