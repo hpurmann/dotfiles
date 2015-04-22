@@ -91,7 +91,6 @@ set textwidth=0 wrapmargin=0
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
 let &showbreak = '↳ '
-
 " Remove timeout when going back to normal mode
 set notimeout
 set ttimeout
