@@ -281,7 +281,7 @@ autocmd Filetype javascript nnoremap <buffer> <Leader>re :update<Bar>:call Vimux
 autocmd Filetype coffee nnoremap <buffer> <Leader>re :update<Bar>:call VimuxRunCommand('jasmine-node --coffee .')<cr>
 
 "}}}
-autocmd Filetype tex nnoremap <buffer> <Leader>rr :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
+autocmd Filetype tex nnoremap <buffer> <Leader>rt :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
 
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.tig set filetype=tiger
