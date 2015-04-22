@@ -1,6 +1,7 @@
 [user]
 	name = Hendrik Purmann
 	email = h.purmann@googlemail.com
+	signingkey = 28C7B5AE
 [core]
 	excludesfile = /Users/hpurmann/dotfiles/gitignore
 	editor = vim
