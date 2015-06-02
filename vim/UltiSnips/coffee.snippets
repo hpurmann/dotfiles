@@ -11,7 +11,7 @@ console.dir $1
 endsnippet
 
 snippet it "it test def"
-it 'should $1', ->
+it 'should $1', Promise.coroutine ->
 endsnippet
 
 snippet de "describe test def"
