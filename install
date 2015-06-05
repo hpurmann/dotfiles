@@ -12,7 +12,6 @@ function create_vim_dirs {
     cd $dir
     mkdir -p "vim/tmp/undo"
     mkdir -p "vim/tmp/backup"
-    mkdir -p "vim/tmp/swap"
 }
 
 function backup_create_symlinks {
