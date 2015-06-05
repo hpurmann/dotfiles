@@ -396,7 +396,7 @@ nnoremap <leader>zn :lnext<cr>
 nnoremap <leader>zp :lprev<cr>
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_disabled_filetypes=['lex']
+let g:syntastic_ignore_files=['tex$']
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
