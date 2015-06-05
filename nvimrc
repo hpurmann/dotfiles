@@ -8,11 +8,20 @@ Plug 'tpope/vim-repeat'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-airline'
+Plug 'scrooloose/nerdcommenter'
 Plug 'benmills/vimux'
+Plug 'SirVer/ultisnips'
+Plug 'pangloss/vim-javascript'
+Plug 'kchmck/vim-coffee-script'
+Plug 'digitaltoad/vim-jade'
+Plug 'wavded/vim-stylus'
+Plug 'shime/vim-livedown'
+Plug 'fatih/vim-go'
+Plug 'majutsushi/tagbar'
+Plug 'benekastah/neomake'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
 call plug#end()
-
 
 let mapleader = ","
 
@@ -86,6 +95,7 @@ if has('persistent_undo')
 endif
 set backupdir=~/.nvim/tmp/backup// " backups
 set backup
+set noswapfile
 
 " Don't use arrow keys - they shouldn't be touched in vim
 nnoremap <left> <nop>
@@ -121,11 +131,16 @@ nnoremap <Leader>x :bd<cr>
 " nnoremap <leader>ev :e ~/dotfiles/vimrc<cr>
 " nnoremap <leader>ez :e ~/dotfiles/zshrc<cr>
 " nnoremap <leader>et :e ~/dotfiles/tmux.conf<cr>
-" nnoremap <Leader>es :UltiSnipsEdit<cr>
+nnoremap <Leader>es :UltiSnipsEdit<cr>
 
 " Easy splitted window navigation
-noremap <C-h> <C-w>h
-noremap <C-l> <C-w>l
+" Terrible workaround for <C-h> currently not working in neovim
+" https://github.com/neovim/neovim/issues/2048
+if has('nvim')
+    nmap <BS> <C-W>h
+endif
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " Easy buffer navigation
 nnoremap <C-j> :bprevious<cr>
@@ -134,7 +149,6 @@ nnoremap <C-k> :bnext<cr>
 " Create newlines like o and O but stay in normal mode
 nnoremap <silent> zj o<Esc>k
 nnoremap <silent> zk O<Esc>
-
 
 " Bind copy to clipboard
 nnoremap <Leader>p "+p
@@ -168,6 +182,13 @@ augroup END
 " Toggle spell checking
 nnoremap <F5> :setlocal spell! spelllang=en_us<CR>
 
+" Filetype specific mapping (executing)
+function! CdToFile()
+    :lcd %:p:h
+endfunction
+
+nnoremap cd :call CdToFile()<cr>
+
 " ---- Plugins ----
 " Redefine fugitive keys
 if hasmapto('<Leader>g')
@@ -184,6 +205,13 @@ nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gp :call VimuxRunCommandInDir("git push", 0)<cr>
 nnoremap <leader>gl :call VimuxRunCommandInDir("git pull", 0)<cr>
 
+au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.rs set filetype=rust
+au BufNewFile,BufRead Vagrantfile set filetype=ruby
+
+autocmd Filetype tex nnoremap <buffer> <Leader>rt :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
+autocmd Filetype go nnoremap <buffer> <Leader>rt :update<Bar>:call VimuxRunCommand('go test -v')<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    Molokai    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -194,6 +222,17 @@ if filereadable(globpath(&rtp, 'colors/molokai.vim'))
 else
     colorscheme default
 endif
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    NerdTree    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Disable the scrollbars
+set guioptions-=r
+set guioptions-=L
+
+" Keep NERDTree window fixed between multiple toggles
+set winfixwidth
+nmap <C-i> :NERDTreeToggle<cr>
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    Airline    ***
@@ -228,3 +267,37 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    Livedown    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map gm :LivedownPreview<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    CoffeeScript    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd Filetype coffee nnoremap <buffer> <leader>js :CoffeeCompile<cr>
+autocmd Filetype coffee vnoremap <buffer> <leader>js :CoffeeCompile<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    Golang    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" format with goimports instead of gofmt
+let g:go_fmt_command = "goimports"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    TagBar    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>t :TagbarToggle<CR>
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    Neomake  ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:neomake_coffeescript_enabled_makers = ['coffeelint']
+
+" Run Neomake on every file write
+autocmd! BufWritePost * Neomake
+
+" Open error window
+nnoremap <leader>zz :lopen<cr>
+nnoremap <leader>zn :lnext<cr>
+nnoremap <leader>zp :lprev<cr>
