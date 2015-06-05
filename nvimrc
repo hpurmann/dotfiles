@@ -1,18 +1,20 @@
 call plug#begin('~/.nvim/bundle')
 
-Plug 'kien/ctrlp.vim'
+Plug 'tomasr/molokai'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
+Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'bling/vim-airline'
+Plug 'benmills/vimux'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
 call plug#end()
 
 
 let mapleader = ","
-
-
 
 " ---- Basic settings ----
 set relativenumber
@@ -23,6 +25,24 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+" filetype plugin indent on
+
+" --- Searching ---
+"
+" sane regexes
+nnoremap / /\v
+vnoremap / /\v
+
+set ignorecase
+set smartcase
+set showmatch
+set gdefault
+set hlsearch
+set incsearch
+
+" clear search matching
+noremap <leader><space> :noh<cr>:call clearmatches()<cr>
+
 set wrap
 " turn off physical line wrapping (ie: automatic insertion of newlines)
 set textwidth=0 wrapmargin=0
@@ -31,6 +51,24 @@ set textwidth=0 wrapmargin=0
 set list
 set listchars=tab:.\ ,eol:¬,extends:❯,precedes:❮,trail:␣
 let &showbreak = '↳ '
+
+" Remove annoying sounds
+set visualbell
+
+augroup trailing
+    au!
+    au InsertEnter * :set listchars-=trail:␣
+    au InsertLeave * :set listchars+=trail:␣
+augroup END
+
+" Only show cursorline in the current window and in normal mode.
+augroup cline
+    au!
+    au WinLeave * set nocursorline
+    au WinEnter * set cursorline
+    au InsertEnter * set nocursorline
+    au InsertLeave * set cursorline
+augroup END
 
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc,tmp,*.scssc
 
@@ -49,9 +87,28 @@ endif
 set backupdir=~/.nvim/tmp/backup// " backups
 set backup
 
+" Don't use arrow keys - they shouldn't be touched in vim
+nnoremap <left> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <right> <nop>
+
+inoremap <left> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <right> <nop>
+
 " ---- Basic operations ----
 " better ESC
 inoremap jk <esc>
+
+set autoread
+set backspace=indent,eol,start
+set hidden
+set history=1000
+set laststatus=2
+set ruler
+set showcmd
 
 " Saving, opening and closing
 nnoremap <Leader>w :update<cr>
@@ -88,6 +145,16 @@ vnoremap <Leader>y "+y
 nnoremap j gj
 nnoremap k gk
 
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+" Disable code folding completely
+set nofoldenable
+
+" Set 3 lines to the cursor - when moving vertically
+set scrolloff=3
+
 " Set vertical bar in insert mode
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
@@ -114,6 +181,50 @@ nnoremap <leader>gm :Gmove<space>
 nnoremap <leader>gr :Gread<cr>
 nnoremap <leader>ga :Gwrite<cr>
 nnoremap <leader>gc :Gcommit<cr>
-" TODO: Re-enable when vimux is installed
-" nnoremap <leader>gp :call VimuxRunCommandInDir("git push", 0)<cr>
-" nnoremap <leader>gl :call VimuxRunCommandInDir("git pull", 0)<cr>
+nnoremap <leader>gp :call VimuxRunCommandInDir("git push", 0)<cr>
+nnoremap <leader>gl :call VimuxRunCommandInDir("git pull", 0)<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    Molokai    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" During installation the molokai colorscheme might not be avalable
+if filereadable(globpath(&rtp, 'colors/molokai.vim'))
+    colorscheme molokai
+else
+    colorscheme default
+endif
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    Airline    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Airline powerline font
+" https://github.com/Lokaltog/powerline-fonts/tree/master/Meslo
+set guifont=Meslo\ LG\ M\ for\ Powerline:h12
+let g:airline_powerline_fonts = 1
+
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    CtrlP    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nnoremap <Leader>o :CtrlPBuffer<cr>
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
