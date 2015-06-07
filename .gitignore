@@ -8,3 +8,6 @@ vim/tmp
 # neovim
 nvim/bundle
 nvim/tmp
+
+# spell files
+nvim/spell
