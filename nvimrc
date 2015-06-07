@@ -83,11 +83,6 @@ augroup END
 
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc,tmp,*.scssc
 
-set wildmenu
-" zsh style autocomplete menu
-" (practical vim, p. 66)
-set wildmode=full
-
 " Set up undo-, backup- and swapfiles
 if has('persistent_undo')
     set undodir=~/.vim/tmp/undo//     " undo files
