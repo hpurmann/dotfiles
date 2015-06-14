@@ -72,6 +72,10 @@ augroup trailing
     au InsertLeave * :set listchars+=trail:␣
 augroup END
 
+" When switching buffers, preserve window view.
+au BufLeave * if !&diff | let b:winview = winsaveview() | endif
+au BufEnter * if exists('b:winview') && !&diff | call winrestview(b:winview) | endif
+
 " Only show cursorline in the current window and in normal mode.
 augroup cline
     au!
