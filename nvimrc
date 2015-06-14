@@ -206,6 +206,8 @@ au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.rs set filetype=rust
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
 
+nnoremap <Leader>rr :update<Bar>:call VimuxRunLastCommand()<cr>
+
 autocmd Filetype tex nnoremap <buffer> <Leader>rt :update<Bar>:call VimuxRunCommandInDir('latexmk -pdf', 1)<cr>
 autocmd Filetype go nnoremap <buffer> <Leader>rt :update<Bar>:call VimuxRunCommand('go test -v')<cr>
 
