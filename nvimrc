@@ -128,10 +128,9 @@ nnoremap <Leader>q :bp\|bd #<cr>
 nnoremap <Leader>x :bd<cr>
 
 " Quick editing
-" TODO: Uncomment when moved to normal dotfiles
-" nnoremap <leader>ev :e ~/dotfiles/vimrc<cr>
-" nnoremap <leader>ez :e ~/dotfiles/zshrc<cr>
-" nnoremap <leader>et :e ~/dotfiles/tmux.conf<cr>
+nnoremap <leader>ev :e ~/dotfiles/nvimrc<cr>
+nnoremap <leader>ez :e ~/dotfiles/zshrc<cr>
+nnoremap <leader>et :e ~/dotfiles/tmux.conf<cr>
 nnoremap <Leader>es :UltiSnipsEdit<cr>
 
 " Easy splitted window navigation
