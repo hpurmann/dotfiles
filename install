@@ -2,7 +2,7 @@
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="vimrc vim nvimrc nvim tmux.conf zshrc gitconfig oh-my-zsh"
+files="nvimrc nvim tmux.conf zshrc gitconfig oh-my-zsh"
 
 function create_backup_dir {
     mkdir -p $olddir
@@ -10,8 +10,8 @@ function create_backup_dir {
 
 function create_vim_dirs {
     cd $dir
-    mkdir -p "vim/tmp/undo"
-    mkdir -p "vim/tmp/backup"
+    mkdir -p "nvim/tmp/undo"
+    mkdir -p "nvim/tmp/backup"
 }
 
 function backup_create_symlinks {
