@@ -22,6 +22,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
 Plug 'Numkil/ag.nvim'
+Plug 'floobits/floobits-neovim'
 
 call plug#end()
 
