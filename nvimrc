@@ -24,6 +24,7 @@ Plug 'ervandew/supertab'
 Plug 'Numkil/ag.nvim'
 Plug 'floobits/floobits-neovim'
 Plug 'gabesoft/vim-ags'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
