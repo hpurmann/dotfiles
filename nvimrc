@@ -40,6 +40,9 @@ set shiftwidth=4
 set expandtab
 set notimeout
 
+" Disable mouse
+set mouse=
+
 " filetype plugin indent on
 
 " --- Searching ---
