@@ -42,6 +42,11 @@ alias vash="vagrant ssh"
 # Fix ctags 'illegal option' error
 alias ctags="`brew --prefix`/bin/ctags"
 
+# Print documents
+function printUni {
+    cat $1 | ssh xian.imp.fu-berlin.de lpr -P t9-k42-zedat01
+}
+
 # Name windows in tmux
 DISABLE_AUTO_TITLE=true
 
