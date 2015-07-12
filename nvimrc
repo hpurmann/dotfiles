@@ -26,6 +26,7 @@ Plug 'floobits/floobits-neovim'
 Plug 'gabesoft/vim-ags'
 Plug 'airblade/vim-gitgutter'
 Plug 'wting/rust.vim'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
