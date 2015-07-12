@@ -25,6 +25,7 @@ Plug 'Numkil/ag.nvim'
 Plug 'floobits/floobits-neovim'
 Plug 'gabesoft/vim-ags'
 Plug 'airblade/vim-gitgutter'
+Plug 'wting/rust.vim'
 
 call plug#end()
 
