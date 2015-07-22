@@ -47,7 +47,7 @@ alias ctags="`brew --prefix`/bin/ctags"
 
 # Print documents
 function printUni {
-    cat $1 | ssh xian.imp.fu-berlin.de lpr -P t9-k42-zedat01
+    cat $1 | ssh andorra.imp.fu-berlin.de lpr -P t9-k42-zedat01
 }
 
 # Name windows in tmux
