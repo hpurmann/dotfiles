@@ -320,12 +320,6 @@ autocmd Filetype coffee nnoremap <buffer> <leader>js :CoffeeCompile<cr>
 autocmd Filetype coffee vnoremap <buffer> <leader>js :CoffeeCompile<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                     ***    Golang    ***
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" format with goimports instead of gofmt
-let g:go_fmt_command = "goimports"
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    TagBar    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>t :TagbarToggle<CR>
