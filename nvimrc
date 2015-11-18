@@ -27,6 +27,7 @@ Plug 'gabesoft/vim-ags'
 Plug 'airblade/vim-gitgutter'
 Plug 'wting/rust.vim'
 Plug 'cespare/vim-toml'
+Plug 'sjl/splice.vim/'
 
 call plug#end()
 
