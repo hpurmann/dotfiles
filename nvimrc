@@ -28,6 +28,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'wting/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'sjl/splice.vim/'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -225,15 +226,17 @@ autocmd Filetype tex nnoremap <buffer> <Leader>rt :update<Bar>:call VimuxRunComm
 autocmd Filetype go nnoremap <buffer> <Leader>rt :update<Bar>:call VimuxRunCommand('go test -v')<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                     ***    Molokai    ***
+"                     ***    Gruvbox    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set background=dark
+colorscheme gruvbox
 
 " During installation the molokai colorscheme might not be avalable
-if filereadable(globpath(&rtp, 'colors/molokai.vim'))
-    colorscheme molokai
-else
-    colorscheme default
-endif
+"if filereadable(globpath(&rtp, 'colors/molokai.vim'))
+    "colorscheme molokai
+"else
+    "colorscheme default
+"endif
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    NerdTree    ***
