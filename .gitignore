@@ -11,3 +11,6 @@ nvim/tmp
 
 # spell files
 nvim/spell
+
+# tmux
+tmux
