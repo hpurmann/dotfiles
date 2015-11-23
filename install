@@ -16,23 +16,27 @@ function create_vim_dirs {
     mkdir -p "nvim/tmp/backup"
 }
 
+function backup_create_symlink {
+    if [ -f ".$2" ]; then
+        mv ~/.$2 $olddir
+    fi
+
+    echo "Creating symlink to $2 in home directory."
+    ln -s $dir/$2 $1$2
+}
+
 function backup_create_symlinks {
     echo "Backing up dotfiles to $olddir"
     cd ~
-    for file in $files; do
-        if [ -f ".$file" ]; then
-            mv ~/.$file $olddir
-        fi
 
-        echo "Creating symlink to $file in home directory."
-        ln -s $dir/$file ~/.$file
+    # Files in home folder
+    for file in $files; do
+        backup_create_symlink "~/." $file
     done
+
+    # Files in xdg
     for file in $files_xdg; do
-        if [ -f ".$file" ]; then
-            mv ~/.$file $olddir
-        fi
-        echo "Creating symlink to xdg config $file in home directory."
-        ln -s $dir/$file ~/.config/$file
+        backup_create_symlink "~/.config/" $file
     done
 }
 
