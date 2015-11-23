@@ -2,9 +2,11 @@
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="nvimrc nvim tmux.conf zshrc gitconfig oh-my-zsh"
+files="tmux.conf zshrc gitconfig oh-my-zsh"
+files_xdg="nvim"
 
 function create_backup_dir {
+    echo "Creating backup dir"
     mkdir -p $olddir
 }
 
@@ -24,6 +26,13 @@ function backup_create_symlinks {
 
         echo "Creating symlink to $file in home directory."
         ln -s $dir/$file ~/.$file
+    done
+    for file in $files_xdg; do
+        if [ -f ".$file" ]; then
+            mv ~/.$file $olddir
+        fi
+        echo "Creating symlink to xdg config $file in home directory."
+        ln -s $dir/$file ~/.config/$file
     done
 }
 

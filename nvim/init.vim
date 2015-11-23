@@ -1,4 +1,4 @@
-call plug#begin('~/.nvim/bundle')
+call plug#begin('~/.config/nvim/bundle')
 
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-fugitive'
@@ -100,12 +100,12 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jp
 
 " Set up undo-, backup- and swapfiles
 if has('persistent_undo')
-    set undodir=~/.vim/tmp/undo//     " undo files
+    set undodir=~/.config/nvim/tmp/undo//     " undo files
     set undofile
     set undolevels=3000
     set undoreload=10000
 endif
-set backupdir=~/.nvim/tmp/backup// " backups
+set backupdir=~/.config/nvim/tmp/backup// " backups
 set backup
 set noswapfile
 
@@ -139,7 +139,7 @@ nnoremap <Leader>q :bp\|bd #<cr>
 nnoremap <Leader>x :bd<cr>
 
 " Quick editing
-nnoremap <leader>ev :e ~/dotfiles/nvimrc<cr>
+nnoremap <leader>ev :e ~/dotfiles/nvim/init.vim<cr>
 nnoremap <leader>ez :e ~/dotfiles/zshrc<cr>
 nnoremap <leader>et :e ~/dotfiles/tmux.conf<cr>
 nnoremap <Leader>es :UltiSnipsEdit<cr>
@@ -186,7 +186,7 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " Auto source vimrc
 augroup MyAutoCmd
     autocmd!
-    autocmd MyAutoCmd BufWritePost nvimrc nested source $MYVIMRC
+    autocmd MyAutoCmd BufWritePost init.vim nested source $MYVIMRC
 augroup END
 
 
@@ -231,13 +231,6 @@ autocmd Filetype go nnoremap <buffer> <Leader>rt :update<Bar>:call VimuxRunComma
 set background=dark
 colorscheme gruvbox
 
-" During installation the molokai colorscheme might not be avalable
-"if filereadable(globpath(&rtp, 'colors/molokai.vim'))
-    "colorscheme molokai
-"else
-    "colorscheme default
-"endif
-"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    NerdTree    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -274,7 +267,7 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsSnippetsDir = $HOME . '/dotfiles/nvim/UltiSnips'
+let g:UltiSnipsSnippetsDir = $HOME . '/.config/nvim/UltiSnips'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
