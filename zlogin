@@ -5,3 +5,7 @@ eval "$(rbenv init -)"
 function dinit {
     source docker-helper.sh default
 }
+
+function tmux-work {
+    ~/dotfiles/scripts/tmux-work.sh
+}
