@@ -1,10 +1,14 @@
 brew 'git'
-brew 'python'
-brew 'node'
 brew 'tmux'
-brew 'ruby'
 brew 'vim'
 brew 'ctags'
+
+brew 'python'
+brew 'node'
+brew 'ruby'
+
+brew 'brew-cask'
+brew 'chromedriver'
 
 # [tmux OSX Clipboard](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard)
 brew 'reattach-to-user-namespace'
