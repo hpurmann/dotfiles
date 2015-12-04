@@ -39,8 +39,6 @@ alias brewup="brew update && brew upgrade"
 # Quickly exit tmux panes
 alias e="exit"
 
-# Quickly ssh into vagrant
-alias vash="vagrant ssh"
 
 # Fix ctags 'illegal option' error
 alias ctags="`brew --prefix`/bin/ctags"
