@@ -1,5 +1,5 @@
 #!/bin/bash
-SESSION=x
+SESSION=0
 DEV_ROOT=~/dev
 WORK_REPOSITORY=actano/rplan
 
