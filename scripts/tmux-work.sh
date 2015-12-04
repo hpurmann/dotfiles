@@ -18,6 +18,7 @@ tmux -2 new-session -d -s $SESSION
 tmux rename-window -t $SESSION:0 'rplan'
 tmux-select 0 0
 cd_to_work
+tmux send-keys "nvim" C-m
 
 tmux new-window -t $SESSION:1 -n 'ag+git'
 tmux split-window -h
