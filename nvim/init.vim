@@ -193,6 +193,9 @@ augroup END
 " Toggle spell checking
 nnoremap <F5> :setlocal spell! spelllang=en_us<CR>
 
+" Remove all trailing whitespaces
+nnoremap <silent> <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
 " Filetype specific mapping (executing)
 function! CdToFile()
     :lcd %:p:h
