@@ -17,6 +17,9 @@ export PATH=$PATH:"/usr/texbin"
 export GOPATH=$HOME/dev/go
 export PATH=$PATH:$GOPATH/bin
 
+# Custom scripts
+export PATH=$PATH:~/dotfiles/scripts
+
 # Set language
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
