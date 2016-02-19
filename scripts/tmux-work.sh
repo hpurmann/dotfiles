@@ -20,18 +20,11 @@ tmux-select 0 0
 cd_to_work
 tmux send-keys "nvim" C-m
 
-tmux new-window -t $SESSION:1 -n 'ag+git'
+tmux new-window -t $SESSION:1 -n 'docker'
 tmux split-window -h
 tmux-select 1 1
 cd_to_work
 tmux-select 1 0
-cd_to_work
-
-tmux new-window -t $SESSION:2 -n 'docker'
-tmux split-window -h
-tmux-select 2 1
-cd_to_work
-tmux-select 2 0
 cd_to_work
 
 # Set default window
