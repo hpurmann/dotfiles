@@ -5,7 +5,6 @@ brew 'ctags'
 
 brew 'python'
 brew 'node'
-brew 'ruby'
 
 brew 'brew-cask'
 brew 'chromedriver'
