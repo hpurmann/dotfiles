@@ -1,13 +1,10 @@
 brew 'git'
 brew 'tmux'
-brew 'vim'
-brew 'ctags'
+brew 'neovim/neovim/neovim'
 
+brew 'ctags'
 brew 'python'
 brew 'node'
-
-brew 'brew-cask'
-brew 'chromedriver'
 
 # [tmux OSX Clipboard](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard)
 brew 'reattach-to-user-namespace'
@@ -17,3 +14,6 @@ brew 'cmake'
 
 # ag
 brew 'the_silver_searcher'
+
+# Casks
+cask 'chromium'
