@@ -18,7 +18,7 @@ Plug 'shime/vim-livedown'
 Plug 'fatih/vim-go'
 Plug 'majutsushi/tagbar'
 Plug 'benekastah/neomake'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
 Plug 'Numkil/ag.nvim'
