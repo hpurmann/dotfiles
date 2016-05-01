@@ -123,6 +123,8 @@ inoremap <right> <nop>
 " ---- Basic operations ----
 " better ESC
 inoremap jk <esc>
+inoremap Jk <esc>
+inoremap JK <esc>
 
 set autoread
 set backspace=indent,eol,start
