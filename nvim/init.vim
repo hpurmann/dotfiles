@@ -336,6 +336,7 @@ let g:go_fmt_command = "goimports"
 "                     ***    Neomake  ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:neomake_coffeescript_enabled_makers = ['coffeelint']
+let g:neomake_javascript_enabled_makers = ['standard']
 
 " Run Neomake on every file write
 autocmd! BufWritePost * Neomake
