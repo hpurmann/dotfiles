@@ -9,7 +9,7 @@ Clean and purely beautiful.
 ```bash
 $ git clone https://github.com/hpurmann/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
-$ ./install.sh
+$ ./install
 ```
 
 ## Brew Packages
