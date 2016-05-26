@@ -14,6 +14,7 @@ function create_vim_dirs {
     cd $dir
     mkdir -p "nvim/tmp/undo"
     mkdir -p "nvim/tmp/backup"
+    mkdir -p "~/.config"
 }
 
 function backup_create_symlink {
@@ -31,12 +32,12 @@ function backup_create_symlinks {
 
     # Files in home folder
     for file in $files; do
-        backup_create_symlink "~/." $file
+        backup_create_symlink "$HOME/." "$file"
     done
 
     # Files in xdg
     for file in $files_xdg; do
-        backup_create_symlink "~/.config/" $file
+        backup_create_symlink "$HOME/.config/" "$file"
     done
 }
 
