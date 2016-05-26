@@ -16,8 +16,6 @@ $ ./install
 
 First get [Homebrew](http://brew.sh/).
 
-<!-- TODO: Put neovim in Brewfile -->
-
 ```bash
 $ brew tap Homebrew/bundle
 $ brew bundle
