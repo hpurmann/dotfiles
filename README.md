@@ -19,8 +19,8 @@ First get [Homebrew](http://brew.sh/).
 <!-- TODO: Put neovim in Brewfile -->
 
 ```bash
-$ brew tap Homebrew/brewdler
-$ brew brewdle
+$ brew tap Homebrew/bundle
+$ brew bundle
 ```
 
 ## Font
