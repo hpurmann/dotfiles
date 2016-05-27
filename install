@@ -44,3 +44,5 @@ function backup_create_symlinks {
 create_backup_dir
 create_vim_dirs
 backup_create_symlinks
+
+bash ./npm.sh
