@@ -1,8 +1,9 @@
 {
   "libs": [
-  ],
-  "loadEagerly": [
+    "browser",
+    "lodash"
   ],
   "plugins": {
+    "node": {}
   }
 }
