@@ -6,6 +6,7 @@ brew 'ctags'
 brew 'python'
 brew 'node'
 brew 'rbenv'
+brew 'hub'
 
 # [tmux OSX Clipboard](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard)
 brew 'reattach-to-user-namespace'
