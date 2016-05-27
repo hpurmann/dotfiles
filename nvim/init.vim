@@ -29,7 +29,6 @@ Plug 'wting/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'sjl/splice.vim/'
 Plug 'morhetz/gruvbox'
-Plug 'jelera/vim-javascript-syntax'
 
 call plug#end()
 
