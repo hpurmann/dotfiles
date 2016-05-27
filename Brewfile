@@ -5,6 +5,7 @@ brew 'neovim/neovim/neovim'
 brew 'ctags'
 brew 'python'
 brew 'node'
+brew 'rbenv'
 
 # [tmux OSX Clipboard](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard)
 brew 'reattach-to-user-namespace'
