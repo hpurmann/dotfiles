@@ -18,6 +18,7 @@ brew 'cmake'
 brew 'the_silver_searcher'
 
 # Casks
+cask 'iterm2'
 cask 'chromium'
 cask 'spectacle'
 cask 'slack'
