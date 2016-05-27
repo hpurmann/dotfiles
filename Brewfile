@@ -19,3 +19,6 @@ brew 'the_silver_searcher'
 # Casks
 cask 'chromium'
 cask 'spectacle'
+cask 'slack'
+cask 'spotify'
+cask 'flux'
