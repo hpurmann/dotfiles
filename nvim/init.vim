@@ -29,6 +29,7 @@ Plug 'wting/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'sjl/splice.vim/'
 Plug 'morhetz/gruvbox'
+Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
