@@ -42,9 +42,6 @@ alias brewup="brew update && brew upgrade"
 # Quickly exit tmux panes
 alias e="exit"
 
-# Kill chrome inside the docker container
-alias killchrome="docker exec -it selenium_chrome pkill -9 -x chrome"
-
 # Fix ctags 'illegal option' error
 alias ctags="`brew --prefix`/bin/ctags"
 
