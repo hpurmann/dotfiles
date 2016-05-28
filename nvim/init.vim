@@ -30,6 +30,7 @@ Plug 'cespare/vim-toml'
 Plug 'sjl/splice.vim/'
 Plug 'morhetz/gruvbox'
 Plug 'Raimondi/delimitMate'
+Plug 'moll/vim-node'
 
 call plug#end()
 
