@@ -135,6 +135,7 @@ set history=1000
 set laststatus=2
 set ruler
 set showcmd
+set lazyredraw
 
 " Saving, opening and closing
 nnoremap <Leader>w :update<cr>
