@@ -2,6 +2,7 @@
 
 global_modules=(
     'eslint-cli'
+    'livedown'
 )
 
 count=0
