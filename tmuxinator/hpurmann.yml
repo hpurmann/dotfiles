@@ -1,0 +1,12 @@
+# ~/.tmuxinator/hpurmann.yml
+
+name: blog
+root: ~/dev/hpurmann
+
+windows:
+  - editor: nvim
+  - jekyll:
+      layout: even-horizontal
+      panes:
+        -
+        -
