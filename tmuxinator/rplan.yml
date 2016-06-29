@@ -1,6 +1,6 @@
 # ~/.tmuxinator/rplan.yml
 
-name: rplan
+name: work
 root: ~/dev/actano/rplan
 
 # Optional tmux socket
