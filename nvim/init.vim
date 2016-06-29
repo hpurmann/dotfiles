@@ -31,6 +31,8 @@ Plug 'sjl/splice.vim/'
 Plug 'morhetz/gruvbox'
 Plug 'Raimondi/delimitMate'
 Plug 'moll/vim-node'
+Plug 'jbgutierrez/vim-babel'
+Plug 'mattn/webapi-vim' " needed for vim-babel
 
 call plug#end()
 
