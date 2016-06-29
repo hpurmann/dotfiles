@@ -45,6 +45,10 @@ alias e="exit"
 # Fix ctags 'illegal option' error
 alias ctags="`brew --prefix`/bin/ctags"
 
+function throttle {
+    sudo sysctl debug.lowpri_throttle_enabled=$1
+}
+
 # Print documents
 function printUni {
     cat $1 | ssh andorra.imp.fu-berlin.de lpr -P t9-k42-zedat01
