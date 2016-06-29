@@ -56,3 +56,6 @@ DISABLE_AUTO_TITLE=true
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+# added by travis gem
+[ -f /Users/hpurmann/.travis/travis.sh ] && source /Users/hpurmann/.travis/travis.sh
