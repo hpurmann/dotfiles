@@ -34,9 +34,3 @@ windows:
       panes:
         -
         -
-  - yourchoice:
-      root: ~/dev/actano/yourchoice
-      layout: even-horizontal
-      panes:
-        - nvim
-        -
