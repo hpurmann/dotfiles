@@ -7,7 +7,13 @@ console.log('$1:', $1)
 endsnippet
 
 snippet it "test"
-it('$1', () => {
+it('should $1', () => {
+	$2
+})
+endsnippet
+
+snippet de "describe test def"
+describe('$1', () => {
 	$2
 })
 endsnippet
