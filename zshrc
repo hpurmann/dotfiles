@@ -54,6 +54,14 @@ function printUni {
     cat $1 | ssh andorra.imp.fu-berlin.de lpr -P t9-k42-zedat01
 }
 
+function dex {
+    local container=$1
+    shift
+    docker exec -it $container /bin/bash -c "$*"
+}
+
+alias ctw='dex rplan npm run client-test:watch -- --reporters spec --files'
+
 # Name windows in tmux
 DISABLE_AUTO_TITLE=true
 
