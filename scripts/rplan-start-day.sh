@@ -3,8 +3,7 @@
 set -e
 DIR="$(pwd)"
 
-docker-machine restart default
-source docker-helper.sh default
+source docker-helper.sh
 docker-compose build
 dnpm install
 docker-compose up --force-recreate
