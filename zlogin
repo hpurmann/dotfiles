@@ -6,9 +6,10 @@ export EDITOR="nvim"
 
 # Docker
 function dinit {
+    source docker-helper.sh
+}
+
+function dinit_vm {
     source docker-helper.sh default
 }
 
-function dinit_beta {
-    source docker-helper.sh
-}
