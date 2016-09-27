@@ -37,7 +37,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias stashpull="git stash && git pull --rebase && git stash pop"
 
 # Homebrew update
-alias brewup="brew update && brew upgrade"
+alias brewup="brew update && brew upgrade --all && brew cleanup; brew doctor"
 
 # Quickly exit tmux panes
 alias e="exit"
