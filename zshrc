@@ -11,7 +11,7 @@ export PATH=$PATH:"/usr/sbin"
 export PATH=$PATH:"/sbin"
 
 # LaTex
-export PATH=$PATH:"/usr/texbin"
+export PATH=$PATH:"/Library/TeX/texbin"
 
 # GoLang PATH
 export GOPATH=$HOME/dev/go
