@@ -26,6 +26,7 @@ Plug 'floobits/floobits-neovim'
 Plug 'gabesoft/vim-ags'
 Plug 'airblade/vim-gitgutter'
 Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 Plug 'cespare/vim-toml'
 Plug 'sjl/splice.vim/'
 Plug 'morhetz/gruvbox'
@@ -340,10 +341,16 @@ nmap <leader>t :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    GoLang    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
+
 " format with goimports instead of gofmt
 let g:go_fmt_command = "goimports"
-"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    Rust    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:racer_cmd = "~/.cargo/bin/racer"
+let $RUST_SRC_PATH="~/dev/rust/src"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    Neomake  ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
