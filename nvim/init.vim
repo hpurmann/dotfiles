@@ -360,6 +360,9 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 " Run Neomake on every file write
 autocmd! BufWritePost * Neomake
 
+" Run with 2 keystrokes
+nnoremap <leader>m :Neomake<cr>
+
 " Open error window
 nnoremap <leader>zz :lopen<cr>
 nnoremap <leader>zn :lnext<cr>
