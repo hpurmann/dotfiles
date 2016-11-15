@@ -17,6 +17,9 @@ export PATH=$PATH:"/Library/TeX/texbin"
 export GOPATH=$HOME/dev/go
 export PATH=$PATH:$GOPATH/bin
 
+# Rust
+export PATH="$PATH:$HOME/.cargo/bin"
+
 # Custom scripts
 export PATH=$PATH:~/dotfiles/scripts
 
