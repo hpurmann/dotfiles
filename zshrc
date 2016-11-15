@@ -20,6 +20,9 @@ export PATH=$PATH:$GOPATH/bin
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
 
+# Yarn
+export PATH="$PATH:$HOME/.yarn/bin"
+
 # Custom scripts
 export PATH=$PATH:~/dotfiles/scripts
 
