@@ -228,7 +228,6 @@ nnoremap <leader>gp :call VimuxRunCommandInDir("git push", 0)<cr>
 nnoremap <leader>gl :call VimuxRunCommandInDir("git pull", 0)<cr>
 
 au BufNewFile,BufRead *.md set filetype=markdown
-au BufNewFile,BufRead *.rs set filetype=rust
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
 
 nnoremap <Leader>rr :update<Bar>:call VimuxRunLastCommand()<cr>
