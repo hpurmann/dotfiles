@@ -4,5 +4,5 @@ set -e
 
 source docker-helper.sh
 docker-compose build
-dnpm install
+dyarn install
 docker-compose up --force-recreate
