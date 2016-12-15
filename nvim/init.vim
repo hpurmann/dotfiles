@@ -5,7 +5,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdcommenter'
@@ -34,6 +33,8 @@ Plug 'Raimondi/delimitMate'
 Plug 'moll/vim-node'
 Plug 'jbgutierrez/vim-babel'
 Plug 'mattn/webapi-vim' " needed for vim-babel
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -304,22 +305,17 @@ let g:ycm_confirm_extra_conf=0
 set completeopt-=preview
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                     ***    CtrlP    ***
+"                     ***    FZF    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nnoremap <Leader>o :CtrlPBuffer<cr>
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
+command! ProjectFiles execute 'Files' s:find_git_root()
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
+nnoremap <c-P> :ProjectFiles<CR>
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    Livedown    ***
