@@ -5,7 +5,6 @@
 [core]
 	excludesfile = /Users/hpurmann/dotfiles/gitignore
 	editor = nvim
-	hooksPath = /Users/hpurmann/dotfiles/hooks
 [push]
 	default = simple
 [diff]
