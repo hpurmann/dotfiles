@@ -362,3 +362,8 @@ nnoremap <leader>m :Neomake<cr>
 nnoremap <leader>zz :lopen<cr>
 nnoremap <leader>zn :lnext<cr>
 nnoremap <leader>zp :lprev<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    vim-projectroot    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+noremap <silent> <leader>cf :ProjectRootCD<CR><Bar> :let @+=expand("%.")<CR><Bar>:echo "Copied" @+<CR>
