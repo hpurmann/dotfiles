@@ -35,6 +35,7 @@ Plug 'jbgutierrez/vim-babel'
 Plug 'mattn/webapi-vim' " needed for vim-babel
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'dbakker/vim-projectroot'
 
 call plug#end()
 
