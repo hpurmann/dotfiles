@@ -1,0 +1,13 @@
+# ~/.tmuxinator/100days.yml
+
+name: 100days
+root: ~/dev
+
+windows:
+  - website1: cd actano/yourchoice && nvim
+  - website2:
+      layout: even-horizontal
+      panes:
+        - cd actano/yourchoice
+        - cd actano/yourchoice
+  - blog: cd 100-days-of-code && nvim log.md
