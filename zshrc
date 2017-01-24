@@ -58,6 +58,10 @@ function throttle {
 
 alias yarnlocal="node /Users/hpurmann/dev/yarn/bin/yarn.js"
 
+function agrequires {
+    ag "require.*$1|import.*$1"
+}
+
 # Print documents
 function printUni {
     cat $1 | ssh andorra.imp.fu-berlin.de lpr -P t9-k42-zedat01
