@@ -56,6 +56,8 @@ function throttle {
     sudo sysctl debug.lowpri_throttle_enabled=$1
 }
 
+alias yarnlocal="node /Users/hpurmann/dev/yarn/bin/yarn.js"
+
 # Print documents
 function printUni {
     cat $1 | ssh andorra.imp.fu-berlin.de lpr -P t9-k42-zedat01
