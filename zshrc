@@ -19,6 +19,7 @@ export PATH=$PATH:$GOPATH/bin
 
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
+export RUST_SRC_PATH="$HOME/dev/rust/src"
 
 # Yarn
 export PATH="$PATH:$HOME/.yarn/bin"
