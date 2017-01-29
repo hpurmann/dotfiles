@@ -17,7 +17,7 @@ Plug 'shime/vim-livedown'
 Plug 'fatih/vim-go'
 Plug 'majutsushi/tagbar'
 Plug 'benekastah/neomake'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --racer-completer' }
 Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
 Plug 'Numkil/ag.nvim'
@@ -25,7 +25,6 @@ Plug 'floobits/floobits-neovim'
 Plug 'gabesoft/vim-ags'
 Plug 'airblade/vim-gitgutter'
 Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
 Plug 'cespare/vim-toml'
 Plug 'sjl/splice.vim/'
 Plug 'morhetz/gruvbox'
@@ -301,6 +300,7 @@ let g:ycm_filetype_blacklist = {
       \}
 
 autocmd FileType c nnoremap <buffer> <silent> <C-]> :YcmCompleter GoTo<cr>
+autocmd FileType rust nnoremap <buffer> <silent> <C-]> :YcmCompleter GoTo<cr>
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
 set completeopt-=preview
@@ -344,8 +344,8 @@ let g:go_fmt_command = "goimports"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    Rust    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:racer_cmd = "~/.cargo/bin/racer"
-let $RUST_SRC_PATH="~/dev/rust/src"
+let g:ycm_rust_src_path = $HOME . '/dev/rust/src'
+let $RUST_SRC_PATH = $HOME . '/dev/rust/src'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    Neomake  ***
