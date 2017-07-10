@@ -58,6 +58,7 @@ function throttle {
 }
 
 alias yarnlocal="node /Users/hpurmann/dev/yarn/bin/yarn.js"
+alias yarndebug="node --inspect --debug-brk /Users/hpurmann/dev/yarn/bin/yarn.js"
 
 function agrequires {
     ag "require.*$1|import.*$1"
