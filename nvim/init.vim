@@ -38,6 +38,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'mxw/vim-jsx'
 Plug 'flowtype/vim-flow'
 Plug 'dbakker/vim-projectroot'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 
 call plug#end()
 
