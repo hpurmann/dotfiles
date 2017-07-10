@@ -193,9 +193,6 @@ set nofoldenable
 " Set 3 lines to the cursor - when moving vertically
 set scrolloff=3
 
-" Set vertical bar in insert mode
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
 " Auto source vimrc
 augroup MyAutoCmd
     autocmd!
