@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/bundle')
 
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
