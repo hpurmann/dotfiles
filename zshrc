@@ -1,8 +1,6 @@
 # Homebrew
 export PATH="/usr/local/bin"
-
-# Go tools
-export PATH=$PATH:"/usr/local/go/bin"
+export PATH="/usr/local/opt/node@6/bin:$PATH"
 
 # System binaries
 export PATH=$PATH:"/usr/bin"
@@ -15,7 +13,8 @@ export PATH=$PATH:"/Library/TeX/texbin"
 
 # GoLang PATH
 export GOPATH=$HOME/dev/go
-export PATH=$PATH:$GOPATH/bin
+export GOROOT="/usr/local/opt/go/libexec"
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
