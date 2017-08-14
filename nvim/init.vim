@@ -356,9 +356,16 @@ let $RUST_SRC_PATH = $HOME . '/dev/rust/src'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:neomake_coffeescript_enabled_makers = ['coffeelint']
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_rust_enabled_makers = ['cargo']
 
 " Run Neomake on every file write
 autocmd! BufWritePost * Neomake
+
+augroup my_neomake_cmds
+    autocmd!
+    " Have neomake run cargo when Rust files are saved.
+    autocmd BufWritePost *.rs Neomake! cargo
+augroup END
 
 " Run with 2 keystrokes
 nnoremap <leader>m :Neomake<cr>
