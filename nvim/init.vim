@@ -38,7 +38,6 @@ Plug 'mattn/webapi-vim' " needed for vim-babel
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mxw/vim-jsx'
-Plug 'flowtype/vim-flow'
 Plug 'dbakker/vim-projectroot'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'oesse/vim-nodegf'
