@@ -22,7 +22,6 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --racer-co
 Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
 Plug 'Numkil/ag.nvim'
-Plug 'floobits/floobits-neovim'
 Plug 'gabesoft/vim-ags'
 Plug 'airblade/vim-gitgutter'
 " Temporary PR due to problems with external crates, see https://github.com/rust-lang/rust.vim/pull/132
