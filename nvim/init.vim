@@ -21,6 +21,7 @@ Plug 'benekastah/neomake'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --racer-completer' }
 Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
+Plug 'rdolgushin/gitignore.vim'
 Plug 'Numkil/ag.nvim'
 Plug 'gabesoft/vim-ags'
 Plug 'airblade/vim-gitgutter'
