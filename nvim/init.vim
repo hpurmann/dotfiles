@@ -39,6 +39,7 @@ Plug 'mxw/vim-jsx'
 Plug 'dbakker/vim-projectroot'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'oesse/vim-nodegf'
+Plug 'tjvr/vim-nearley'
 
 call plug#end()
 
@@ -231,6 +232,7 @@ nnoremap <leader>gl :call VimuxRunCommandInDir("git pull", 0)<cr>
 
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
+au BufNewFile,BufRead *.ne setfiletype nearley
 
 nnoremap <Leader>rr :update<Bar>:call VimuxRunLastCommand()<cr>
 nnoremap <Leader>vr :VimuxRunCommand('')<Left><Left>
