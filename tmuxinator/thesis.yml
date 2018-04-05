@@ -1,7 +1,7 @@
-# ~/.tmuxinator/watercash.yml
+# ~/.tmuxinator/thesis.yml
 
-name: work
-root: ~/dev/go/watercash
+name: thesis
+root: ~/dev/go/src/thesis
 
 # Optional tmux socket
 # socket_name: foo
@@ -30,7 +30,15 @@ startup_window: docker
 windows:
   - editor: nvim
   - docker:
-      layout: even-horizontal
+      layout: dca2,238x64,0,0{118x64,0,0[118x32,0,0,1,118x31,0,33,5],119x64,119,0[119x32,119,0,3,119x31,119,33,8]}
       panes:
-        -
-        -
+        - cd src/server
+        - cd src/server
+        - cd src/client
+        - cd src/client
+  - ecash:
+      layout: ff77,118x61,0,0[118x21,0,0,2,118x21,0,22,7,118x17,0,44,8]
+      panes:
+        - cd src/ecash/Quellcode/console/target
+        - cd src/ecash/Quellcode/console/target
+        - cd src/ecash/Quellcode/console/target
