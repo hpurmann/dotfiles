@@ -1,0 +1,17 @@
+" ---- Basic operations ----
+" better ESC
+inoremap jk <esc>
+inoremap Jk <esc>
+inoremap JK <esc>
+
+" Tabs
+nnoremap <C-j> :action PreviousTab<cr>
+nnoremap <C-k> :action NextTab<cr>
+
+" Create newlines like o and O but stay in normal mode
+nnoremap <silent> zj o<Esc>k
+nnoremap <silent> zk O<Esc>
+
+" Closing tabs
+nnoremap ,q :close<cr>
+nnoremap ,x :close<cr>

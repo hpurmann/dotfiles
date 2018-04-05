@@ -2,7 +2,7 @@
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="tmux.conf tmux zshrc zlogin gitconfig oh-my-zsh tern-config tmuxinator"
+files="tmux.conf tmux zshrc zlogin gitconfig oh-my-zsh tern-config tmuxinator ideavimrc"
 files_xdg="nvim"
 
 function create_backup_dir {
