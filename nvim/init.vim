@@ -25,9 +25,7 @@ Plug 'rdolgushin/gitignore.vim'
 Plug 'Numkil/ag.nvim'
 Plug 'gabesoft/vim-ags'
 Plug 'airblade/vim-gitgutter'
-" Temporary PR due to problems with external crates, see https://github.com/rust-lang/rust.vim/pull/132
-Plug 'jlevesy/rust.vim'
-"Plug 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'sjl/splice.vim/'
 Plug 'morhetz/gruvbox'
@@ -349,6 +347,7 @@ let g:go_fmt_command = "goimports"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_rust_src_path = $HOME . '/dev/rust/src'
 let $RUST_SRC_PATH = $HOME . '/dev/rust/src'
+let g:rustfmt_autosave = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    Neomake  ***
