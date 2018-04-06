@@ -24,9 +24,9 @@ export RUST_SRC_PATH="$HOME/dev/rust/src"
 export PATH="$PATH:$HOME/.yarn/bin"
 
 # Java :/
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+#export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+#export ANDROID_HOME=$HOME/Library/Android/sdk
+#export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # Hyperledger Fabric binaries
 export PATH=$PATH:$HOME/dev/go/src/fabric-samples/bin
