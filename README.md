@@ -17,8 +17,21 @@ $ ./install
 First get [Homebrew](http://brew.sh/).
 
 ```bash
-$ brew tap Homebrew/bundle
 $ brew bundle
+```
+
+## Python support for neovim
+
+```bash
+$ pip3 install neovim
+```
+
+## Tmuxinator
+
+```bash
+$ rbenv install <latest stable version>
+$ rbenv global <latest stable version>
+$ gem install tmuxinator
 ```
 
 ## Font
