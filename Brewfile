@@ -1,6 +1,6 @@
 brew 'git'
 brew 'tmux'
-brew 'neovim/neovim/neovim'
+brew 'neovim'
 
 brew 'ctags'
 brew 'python'
