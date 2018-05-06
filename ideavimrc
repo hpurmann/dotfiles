@@ -1,4 +1,16 @@
-" ---- Basic operations ----
+" Quick editing
+nnoremap ,ev :e ~/dotfiles/ideavimrc<cr>
+
+" Reload .ideavimrc
+nnoremap ,lv :source ~/dotfiles/ideavimrc<cr>
+
+" Enable relative line numbers
+set number
+set relativenumber
+
+" Set 3 lines to the cursor - when moving vertically
+set scrolloff=3
+
 " better ESC
 inoremap jk <esc>
 inoremap Jk <esc>
@@ -8,6 +20,14 @@ inoremap JK <esc>
 nnoremap <C-j> :action PreviousTab<cr>
 nnoremap <C-k> :action NextTab<cr>
 
+" Easier switch between splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Copy into clipboard
+vnoremap ,y :<BS><BS><BS><BS><BS>action $Copy<cr>
+nnoremap ,p :action $Paste<cr>
+
 " Create newlines like o and O but stay in normal mode
 nnoremap <silent> zj o<Esc>k
 nnoremap <silent> zk O<Esc>
@@ -15,3 +35,42 @@ nnoremap <silent> zk O<Esc>
 " Closing tabs
 nnoremap ,q :close<cr>
 nnoremap ,x :close<cr>
+
+" Searching
+set incsearch
+set ignorecase
+
+" Remove annoying sounds
+set visualbell
+
+" Comment and un-comment
+nnoremap ,cc :action CommentByLineComment<cr>
+nnoremap ,cu :action CommentByLineComment<cr>
+vnoremap ,cc :<BS><BS><BS><BS><BS>action CommentByLineComment<cr>
+vnoremap ,cu :<BS><BS><BS><BS><BS>action CommentByLineComment<cr>
+
+" Go to declaration
+nnoremap <C-]> :action GotoDeclaration<cr>
+
+" Search fuzzy for files, similar to Ctrl-P
+nnoremap <C-p> :action GotoFile<cr>
+
+" Search text (ag style)
+nnoremap <C-o> :action FindInPath<cr>
+
+" Search everywhere
+nnoremap <C-i> :action SearchEverywhere<cr>
+
+" Enable vim-surround
+set surround
+
+" Open on GitHub
+nnoremap ,og :action Github.Open.In.Browser<cr>
+vnoremap ,og :<BS><BS><BS><BS><BS>action Github.Open.In.Browser<cr>
+
+" Find usages
+nnoremap ,f :action FindUsages<cr>
+
+" Moving blocks of text in visual mode
+vnoremap < <gv
+vnoremap > >gv
