@@ -35,3 +35,4 @@ windows:
         -
         -
         -
+  - dotfiles: cd ~/dotfiles && nvim
