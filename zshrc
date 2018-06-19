@@ -88,7 +88,6 @@ function dex {
     docker exec -it $container /bin/bash -c "$*"
 }
 
-alias ctw='dex rplan npm run client-test:watch -- --reporters spec --files'
 
 # Name windows in tmux
 DISABLE_AUTO_TITLE=true
