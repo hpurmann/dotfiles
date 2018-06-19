@@ -88,6 +88,9 @@ function dex {
     docker exec -it $container /bin/bash -c "$*"
 }
 
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_CASK_OPTS=--require-sha
 
 # Name windows in tmux
 DISABLE_AUTO_TITLE=true
