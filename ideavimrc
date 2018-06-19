@@ -26,7 +26,8 @@ nnoremap <C-l> <C-w>l
 
 " Copy into clipboard
 vnoremap ,y :<BS><BS><BS><BS><BS>action $Copy<cr>
-nnoremap ,p :action $Paste<cr>
+nnoremap ,p l:action $Paste<cr>
+nnoremap ,P :action $Paste<cr>
 
 " Create newlines like o and O but stay in normal mode
 nnoremap <silent> zj o<Esc>k
