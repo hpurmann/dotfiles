@@ -65,6 +65,8 @@ alias e="exit"
 # Fix ctags 'illegal option' error
 alias ctags="`brew --prefix`/bin/ctags"
 
+alias k=kubectl
+
 # Make Timemachine backups faster
 function throttle {
     sudo sysctl debug.lowpri_throttle_enabled=$1
