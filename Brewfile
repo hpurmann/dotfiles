@@ -1,4 +1,5 @@
 brew 'git'
+brew 'tig'
 brew 'tmux'
 brew 'neovim'
 
