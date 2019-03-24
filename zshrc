@@ -97,7 +97,7 @@ export HOMEBREW_CASK_OPTS=--require-sha
 # Name windows in tmux
 DISABLE_AUTO_TITLE=true
 
-plugins=(git kubectl)
+plugins=(git kubectl helm)
 
 source $ZSH/oh-my-zsh.sh
 
