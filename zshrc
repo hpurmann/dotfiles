@@ -48,7 +48,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Actano Vault
-export VAULT_ADDR=http://vault.actano.de:8200
+export VAULT_ADDR=https://vault.actano.de
 
 # Always start tmux in 256 color mode
 alias tmux="TERM=screen-256color-bce tmux"
