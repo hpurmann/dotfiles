@@ -1,6 +1,5 @@
 set main-view-id = yes
 set main-view-date-display = relative-compact
-set main-view-author-display = abbreviated
 
 bind status A !git commit --amend --reuse-message=HEAD
 bind status D !@?rm %(file)
