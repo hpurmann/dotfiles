@@ -17,7 +17,7 @@ Plug 'wavded/vim-stylus'
 Plug 'shime/vim-livedown'
 Plug 'fatih/vim-go'
 Plug 'majutsushi/tagbar'
-Plug 'benekastah/neomake'
+Plug 'neomake/neomake'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --racer-completer' }
 Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
