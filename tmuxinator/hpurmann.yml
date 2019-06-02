@@ -9,4 +9,4 @@ windows:
       layout: even-horizontal
       panes:
         -
-        -
+        - bundle exec jekyll serve --drafts --incremental
