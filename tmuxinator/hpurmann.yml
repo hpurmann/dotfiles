@@ -1,7 +1,7 @@
 # ~/.tmuxinator/hpurmann.yml
 
 name: blog
-root: ~/dev/hpurmann
+root: ~/dev/hpurmann.github.io
 
 windows:
   - editor: nvim
