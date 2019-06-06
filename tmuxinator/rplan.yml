@@ -28,11 +28,11 @@ startup_window: signup-login
 # post: tmux -CC attach -t rplan
 
 windows:
-  - signup-login:
+  - users-organisations:
       layout: even-horizontal
       panes:
-        - cd signup-login-webclient
-        - cd signup-login-webclient
+        - cd rplan-users-organisations-webclient
+        - cd rplan-users-organisations-webclient
   - stitching:
       layout: dca2,238x64,0,0{118x64,0,0[118x32,0,0,1,118x31,0,33,5],119x64,119,0[119x32,119,0,3,119x31,119,33,8]}
       panes:
