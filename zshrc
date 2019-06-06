@@ -64,6 +64,9 @@ alias ctags="`brew --prefix`/bin/ctags"
 
 alias k=kubectl
 
+# Show all branches by default
+alias tig="tig --all"
+
 # Make Timemachine backups faster
 function throttle {
     sudo sysctl debug.lowpri_throttle_enabled=$1
