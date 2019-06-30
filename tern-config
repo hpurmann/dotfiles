@@ -1,9 +1,0 @@
-{
-  "libs": [
-    "browser",
-    "lodash"
-  ],
-  "plugins": {
-    "node": {}
-  }
-}
