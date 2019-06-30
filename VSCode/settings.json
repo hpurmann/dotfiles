@@ -1,0 +1,16 @@
+{
+    "telemetry.enableTelemetry": false,
+    "editor.rulers": [120],
+    "editor.minimap.enabled": false,
+    "terminal.external.osxExec": "iTerm.App",
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+    "go.autocompleteUnimportedPackages": true,
+    "vim.normalModeKeyBindings": [
+    ],    
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": [ "esc" ],
+        },
+    ],    
+}

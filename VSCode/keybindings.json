@@ -1,0 +1,59 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusRightGroup"
+    },
+    {
+        "key": "ctrl+shift+h",
+        "command": "workbench.action.moveActiveEditorGroupLeft"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.moveActiveEditorGroupDown"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.moveActiveEditorGroupUp"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.moveActiveEditorGroupRight"
+    },
+    {
+        "key": "ctrl+w s",
+        "command": "workbench.action.splitEditorDown"
+    },
+    {
+        "key": "ctrl+w v",
+        "command": "workbench.action.splitEditorRight"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "editor.action.revealDefinition"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "go.test.package"
+    },
+    {
+        "key": "cmd+m",
+        "command": "workbench.action.terminal.toggleTerminal"
+    }
+]
