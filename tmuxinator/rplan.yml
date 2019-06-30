@@ -38,7 +38,7 @@ windows:
       panes:
         - cd rplan-webclient
         - cd rplan-webclient
-        - cd rplan-webclient
+        - cd rplan-webclient && cd node_modules/@rplan && ls -la
         - cd rplan-webclient
   - corporate-design:
       layout: even-horizontal
