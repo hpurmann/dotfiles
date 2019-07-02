@@ -7,6 +7,14 @@
     "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
     "go.autocompleteUnimportedPackages": true,
     "vim.normalModeKeyBindings": [
+        {
+            "before": ["z", "j"],
+            "after": [ "o", "esc", "k" ],
+        },
+        {
+            "before": ["z", "k" ],
+            "after": [ "O", "esc" ],
+        },
     ],    
     "vim.insertModeKeyBindings": [
         {
