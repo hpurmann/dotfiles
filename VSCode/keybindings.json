@@ -53,6 +53,10 @@
         "command": "go.test.package"
     },
     {
+        "key": "cmd+shift+r",
+        "command": "go.benchmark.package"
+    },
+    {
         "key": "cmd+m",
         "command": "workbench.action.terminal.toggleTerminal"
     }
