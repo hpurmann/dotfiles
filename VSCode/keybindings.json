@@ -49,7 +49,7 @@
         "command": "editor.action.revealDefinition"
     },
     {
-        "key": "ctrl+r",
+        "key": "cmd+r",
         "command": "go.test.package"
     },
     {
