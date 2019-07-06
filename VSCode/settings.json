@@ -23,4 +23,6 @@
         },
     ],
     "go.useLanguageServer": true,
+    "workbench.editor.showTabs": true,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
 }
