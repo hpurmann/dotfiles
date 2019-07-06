@@ -22,4 +22,5 @@
             "after": [ "esc" ],
         },
     ],
+    "go.useLanguageServer": true,
 }
