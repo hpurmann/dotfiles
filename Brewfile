@@ -12,6 +12,7 @@ brew 'hub'
 brew 'python3'
 brew 'tree'
 brew 'autojump'
+brew 'mosh'
 
 # [tmux OSX Clipboard](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard)
 brew 'reattach-to-user-namespace'
