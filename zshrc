@@ -59,9 +59,6 @@ alias stashpull="git stash && git pull --rebase && git stash pop"
 # Homebrew update
 alias brewup="brew update && brew upgrade && brew cleanup && brew doctor"
 
-# Fix ctags 'illegal option' error
-alias ctags="`brew --prefix`/bin/ctags"
-
 alias k=kubectl
 
 # Show all branches by default
