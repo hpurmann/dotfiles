@@ -22,7 +22,17 @@
             "after": [ "esc" ],
         },
     ],
-    "go.useLanguageServer": true,
+    // gopls
+    "go.useLanguageServer": false,
+
     "workbench.editor.showTabs": true,
+    "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.colorCustomizations": {
+        "statusBar.background" : "#1A1A1A",
+        "statusBar.noFolderBackground" : "#212121",
+        "statusBar.debuggingBackground": "#263238"
+    },
+    "go.formatTool": "goimports",
+    "files.autoSave": "onFocusChange"
 }
