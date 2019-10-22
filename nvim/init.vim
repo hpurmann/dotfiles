@@ -11,7 +11,6 @@ Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdcommenter'
 Plug 'benmills/vimux'
 Plug 'pangloss/vim-javascript'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 Plug 'kchmck/vim-coffee-script'
 Plug 'digitaltoad/vim-jade'
 Plug 'wavded/vim-stylus'
@@ -19,6 +18,7 @@ Plug 'shime/vim-livedown'
 Plug 'fatih/vim-go'
 Plug 'majutsushi/tagbar'
 Plug 'neomake/neomake'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --racer-completer' }
 Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
 Plug 'rdolgushin/gitignore.vim'
@@ -279,6 +279,36 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    UltiSnips    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YouCompleteMe and UltiSnips compatibility, with the helper of supertab
+" (via http://stackoverflow.com/a/22253548/1626737)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsSnippetsDir = $HOME . '/.config/nvim/UltiSnips'
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     ***    YouCompleteMe    ***
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType python setlocal completeopt-=preview
+let g:ycm_filetype_blacklist = {
+      \ 'tex' : 1,
+      \ 'markdown' : 1
+      \}
+
+autocmd FileType c nnoremap <buffer> <silent> <C-]> :YcmCompleter GoTo<cr>
+autocmd FileType rust nnoremap <buffer> <silent> <C-]> :YcmCompleter GoTo<cr>
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    FZF    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -325,11 +355,11 @@ let g:rustfmt_autosave = 1
 "                     ***    Neomake  ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:neomake_coffeescript_enabled_makers = ['coffeelint']
-"let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_rust_enabled_makers = ['cargo']
 
 " Run Neomake on every file write
-"autocmd! BufWritePost * Neomake
+autocmd! BufWritePost * Neomake
 
 augroup my_neomake_cmds
     autocmd!
