@@ -1,11 +1,13 @@
 #!/bin/bash
 
+docker logs --tail 100 webpack
+
 strip_colors() {
     sed 's/\[[0-9;]*m//g' <<< $1
 }
 
-# read from stdin
-while IFS= read -r LOGLINE;
+IFS=
+docker logs --tail 0 -f webpack | while read -r LOGLINE
 do
     if [[ "${LOGLINE}" == "Hash: "* ]]
     then
