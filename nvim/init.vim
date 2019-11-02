@@ -14,7 +14,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
 Plug 'digitaltoad/vim-jade'
 Plug 'wavded/vim-stylus'
-Plug 'shime/vim-livedown'
 Plug 'fatih/vim-go'
 Plug 'majutsushi/tagbar'
 Plug 'neomake/neomake'
@@ -40,6 +39,7 @@ Plug 'dbakker/vim-projectroot'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'oesse/vim-nodegf'
 Plug 'tjvr/vim-nearley'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 call plug#end()
 
@@ -322,9 +322,9 @@ nnoremap <c-P> :ProjectFiles<CR>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                     ***    Livedown    ***
+"                     ***    Markdown Preview    ***
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map gm :LivedownPreview<CR>
+map gm :MarkdownPreview<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    CoffeeScript    ***
