@@ -1,31 +1,38 @@
 brew 'git'
 brew 'tig'
 brew 'tmux'
-brew 'neovim'
-
-brew 'ctags'
 brew 'python'
+brew 'neovim'
+brew 'zsh'
+brew 'mas'
+
 brew 'node'
+brew 'node@10'
+brew 'node@12'
 brew 'yarn'
 brew 'rbenv'
-brew 'hub'
 brew 'python3'
 brew 'tree'
-brew 'autojump'
 brew 'mosh'
+brew 'exercism'
+
+# Kubernetes
+brew 'kubernetes-cli'
+brew 'kubeseal'
+brew 'jq'
+brew 'watch'
 
 # [tmux OSX Clipboard](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard)
-brew 'reattach-to-user-namespace'
+# brew 'reattach-to-user-namespace'
 
 # Dependency needed for [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
-brew 'cmake'
+# brew 'cmake'
 
 # ag
 brew 'the_silver_searcher'
 
 # Casks
 cask 'iterm2'
-cask 'chromium'
 cask 'spectacle'
 cask 'slack'
 cask 'spotify'
@@ -34,3 +41,7 @@ cask 'licecap'
 cask 'mactex'
 cask 'skim'
 cask 'pgadmin4'
+
+# Mac App Store
+mas 'Todoist', id: 585829637
+mas 'Pocket', id: 568494494
