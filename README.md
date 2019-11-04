@@ -20,6 +20,12 @@ First get [Homebrew](http://brew.sh/).
 $ brew bundle
 ```
 
+## iTerm
+[Fix alt + (left/right) to jump words](https://coderwall.com/p/h6yfda/use-and-to-jump-forwards-backwards-words-in-iterm-2-on-os-x)
+
+## NeoVim
+Install [vim-plug](https://github.com/junegunn/vim-plug)
+
 ## Python support for neovim
 
 ```bash
