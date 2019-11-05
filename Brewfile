@@ -5,6 +5,7 @@ brew 'python'
 brew 'neovim'
 brew 'zsh'
 brew 'mas'
+brew 'graphviz' # needed for PlantUML
 
 brew 'node'
 brew 'node@10'
@@ -15,6 +16,7 @@ brew 'python3'
 brew 'tree'
 brew 'mosh'
 brew 'exercism'
+brew 'vault'
 
 # Kubernetes
 brew 'kubernetes-cli'
