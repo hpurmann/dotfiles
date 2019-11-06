@@ -40,6 +40,8 @@ cask 'licecap'
 cask 'mactex'
 cask 'skim'
 cask 'pgadmin4'
+cask 'signal'
+cask 'postman'
 
 # Mac App Store
 mas 'Todoist', id: 585829637
