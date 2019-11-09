@@ -44,5 +44,6 @@ cask 'signal'
 cask 'postman'
 
 # Mac App Store
+mas 'Xcode', id: 497799835
 mas 'Todoist', id: 585829637
 mas 'Pocket', id: 568494494
