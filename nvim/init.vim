@@ -159,11 +159,6 @@ nnoremap <leader>et :e ~/dotfiles/tmux.conf<cr>
 nnoremap <Leader>es :UltiSnipsEdit<cr>
 
 " Easy splitted window navigation
-" Terrible workaround for <C-h> currently not working in neovim
-" https://github.com/neovim/neovim/issues/2048
-if has('nvim')
-    nmap <BS> <C-W>h
-endif
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
