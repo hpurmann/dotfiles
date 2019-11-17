@@ -42,6 +42,7 @@ cask 'skim'
 cask 'pgadmin4'
 cask 'signal'
 cask 'postman'
+cask 'firefox'
 
 # Mac App Store
 mas 'Xcode', id: 497799835
