@@ -36,6 +36,7 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'oesse/vim-nodegf'
 Plug 'tjvr/vim-nearley'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'elixir-editors/vim-elixir'
 
 call plug#end()
 
