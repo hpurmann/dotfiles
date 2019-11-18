@@ -17,6 +17,7 @@ brew 'tree'
 brew 'mosh'
 brew 'exercism'
 brew 'vault'
+brew 'elixir'
 
 # Kubernetes
 brew 'kubernetes-cli'
