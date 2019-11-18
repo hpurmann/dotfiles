@@ -329,3 +329,8 @@ function! s:check_back_space() abort
 endfunction
 
 nmap <silent> <C-]> <Plug>(coc-definition)
+
+let g:coc_snippet_next = '<tab>'
+
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+           \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
