@@ -18,6 +18,7 @@ brew 'mosh'
 brew 'exercism'
 brew 'vault'
 brew 'elixir'
+brew 'jmeter'
 
 # Kubernetes
 brew 'kubernetes-cli'
