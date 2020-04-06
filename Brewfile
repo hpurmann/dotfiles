@@ -14,11 +14,6 @@ brew 'yarn'
 brew 'rbenv'
 brew 'python3'
 brew 'tree'
-brew 'mosh'
-brew 'exercism'
-brew 'vault'
-brew 'elixir'
-brew 'jmeter'
 
 # Kubernetes
 brew 'kubernetes-cli'
@@ -36,17 +31,13 @@ brew 'the_silver_searcher'
 cask 'iterm2'
 cask 'spectacle'
 cask 'slack'
-cask 'spotify'
 cask 'vlc'
 cask 'licecap'
 cask 'mactex'
 cask 'skim'
 cask 'pgadmin4'
-cask 'signal'
-cask 'postman'
 cask 'firefox'
 
 # Mac App Store
-mas 'Xcode', id: 497799835
 mas 'Todoist', id: 585829637
 mas 'Pocket', id: 568494494
