@@ -3,7 +3,7 @@
 	email = h.purmann@googlemail.com
 	signingkey = 28C7B5AE
 [core]
-	excludesfile = /Users/hpurmann/dotfiles/gitignore
+	excludesfile = ~/dotfiles/gitignore
 	editor = nvim
 [push]
 	default = simple
