@@ -25,11 +25,6 @@ export PATH="$PATH:$HOME/.yarn/bin"
 
 # Java :/
 #export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-#export ANDROID_HOME=$HOME/Library/Android/sdk
-#export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-
-# Hyperledger Fabric binaries
-export PATH=$PATH:$HOME/dev/go/src/fabric-samples/bin
 
 # Custom scripts
 export PATH=$PATH:~/dotfiles/scripts
@@ -47,9 +42,6 @@ export ZSH=$HOME/.oh-my-zsh
 # Using robby's awesome theme
 ZSH_THEME="robbyrussell"
 
-# Actano Vault
-export VAULT_ADDR=https://vault.actano.de
-
 # Always start tmux in 256 color mode
 alias tmux="TERM=screen-256color-bce tmux"
 
@@ -64,29 +56,6 @@ alias k=kubectl
 # Show all branches by default
 alias tig="tig --all"
 
-# Make Timemachine backups faster
-function throttle {
-    sudo sysctl debug.lowpri_throttle_enabled=$1
-}
-
-alias yarnlocal="node /Users/hpurmann/dev/yarn/bin/yarn.js"
-alias yarndebug="node --inspect --debug-brk /Users/hpurmann/dev/yarn/bin/yarn.js"
-
-function agrequires {
-    ag "require.*$1|import.*$1"
-}
-
-# Print documents
-function printUni {
-    cat $1 | ssh andorra.imp.fu-berlin.de lpr -P t9-k42-zedat01
-}
-
-function dex {
-    local container=$1
-    shift
-    docker exec -it $container /bin/bash -c "$*"
-}
-
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASK_OPTS=--require-sha
@@ -100,13 +69,4 @@ plugins=(git kubectl helm)
 ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
-# added by travis gem
-[ -f /Users/hpurmann/.travis/travis.sh ] && source /Users/hpurmann/.travis/travis.sh
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/hpurmann/.bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/hpurmann/.bin/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/hpurmann/.bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/hpurmann/.bin/google-cloud-sdk/completion.zsh.inc'; fi
