@@ -96,6 +96,8 @@ DISABLE_AUTO_TITLE=true
 
 plugins=(git kubectl helm)
 
+# Fix zsh completion security warning
+ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 # added by travis gem
