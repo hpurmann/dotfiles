@@ -20,6 +20,10 @@ First get [Homebrew](http://brew.sh/).
 $ brew bundle
 ```
 
+## oh-my-zsh
+
+[Install oh-my-zsh](https://ohmyz.sh/)
+
 ## iTerm
 [Fix alt + (left/right) to jump words](https://coderwall.com/p/h6yfda/use-and-to-jump-forwards-backwards-words-in-iterm-2-on-os-x)
 
