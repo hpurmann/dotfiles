@@ -57,9 +57,6 @@ alias brewup="brew update && brew upgrade && brew cleanup && brew doctor"
 
 alias k=kubectl
 
-# Show all branches by default
-alias tig="tig --all"
-
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASK_OPTS=--require-sha
