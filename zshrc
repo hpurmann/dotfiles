@@ -20,6 +20,9 @@ export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 export PATH="$PATH:$HOME/.cargo/bin"
 export RUST_SRC_PATH="$HOME/dev/rust/src"
 
+# Python
+export PATH="$PATH:$HOME/Library/Python/3.7/bin"
+
 # Yarn
 export PATH="$PATH:$HOME/.yarn/bin"
 
