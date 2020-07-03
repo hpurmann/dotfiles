@@ -32,6 +32,7 @@
 	autosquash = true
 [alias]
 	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
+	cleanup = !git branch --merged master | egrep -v '(^\\*|master)' | xargs -n 1 git branch -d
 [commit]
 	verbose = true
 [init]
