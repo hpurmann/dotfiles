@@ -33,6 +33,7 @@
 [alias]
 	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
 	cleanup = !git branch --merged master | egrep -v '(^\\*|master)' | xargs -n 1 git branch -d
+	pc = !git pull && git cleanup
 [commit]
 	verbose = true
 [init]
