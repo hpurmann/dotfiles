@@ -15,14 +15,8 @@ brew 'yarn'
 brew 'rbenv'
 brew 'tree'
 
-# Kubernetes
-brew 'kubernetes-cli'
-brew 'kubeseal'
 brew 'jq'
 brew 'watch'
-
-# Dependency needed for [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
-# brew 'cmake'
 
 # ag
 brew 'the_silver_searcher'
@@ -30,12 +24,9 @@ brew 'the_silver_searcher'
 # Casks
 cask 'iterm2'
 cask 'spectacle'
-cask 'slack'
 cask 'vlc'
-cask 'licecap'
 cask 'mactex'
 cask 'skim'
-cask 'pgadmin4'
 cask 'firefox'
 
 # Mac App Store
