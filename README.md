@@ -6,6 +6,9 @@ Clean and purely beautiful.
 
 ## Installation
 
+* Install xCode
+* Install [Homebrew](http://brew.sh/)
+
 ```bash
 $ git clone https://github.com/hpurmann/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
@@ -13,8 +16,6 @@ $ ./install
 ```
 
 ## Brew Packages
-
-First get [Homebrew](http://brew.sh/).
 
 ```bash
 $ brew bundle
