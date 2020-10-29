@@ -28,6 +28,7 @@ cask 'vlc'
 cask 'mactex'
 cask 'skim'
 cask 'firefox'
+cask 'visual-studio-code'
 
 # Mac App Store
 mas 'Todoist', id: 585829637

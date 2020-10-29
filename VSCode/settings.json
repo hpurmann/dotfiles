@@ -34,5 +34,9 @@
         "statusBar.debuggingBackground": "#263238"
     },
     "go.formatTool": "goimports",
-    "files.autoSave": "onFocusChange"
+    "files.autoSave": "onFocusChange",
+    "window.zoomLevel": 1,
+    "liveshare.anonymousGuestApproval": "reject",
+    "liveshare.guestApprovalRequired": true,
+    "liveshare.autoShareServers": false
 }
