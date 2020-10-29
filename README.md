@@ -48,3 +48,12 @@ $ gem install tmuxinator
 ## Font
 
 [Meslo](https://github.com/powerline/fonts/blob/master/Meslo/Meslo%20LG%20M%20Regular%20for%20Powerline.otf)
+
+## Visual Studio Code
+
+Symlink files to Visual Studio Code folder:
+
+```bash
+ln -s $HOME/dotfiles/VSCode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+ln -s $HOME/dotfiles/VSCode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
+```
