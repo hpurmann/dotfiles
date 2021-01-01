@@ -2,5 +2,12 @@
   "coc.preferences.colorSupport": true,
   "suggest.enablePreview": true,
   "diagnostic.checkCurrentLine": true,
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": true,
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    }
+  }
 }
