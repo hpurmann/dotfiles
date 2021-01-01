@@ -9,22 +9,20 @@
     "vim.normalModeKeyBindings": [
         {
             "before": ["z", "j"],
-            "after": [ "o", "esc", "k" ],
+            "after": [ "o", "esc", "k" ]
         },
         {
             "before": ["z", "k" ],
-            "after": [ "O", "esc" ],
-        },
-    ],    
+            "after": [ "O", "esc" ]
+        }
+    ],
     "vim.insertModeKeyBindings": [
         {
             "before": ["j", "k"],
-            "after": [ "esc" ],
-        },
+            "after": [ "esc" ]
+        }
     ],
-    // gopls
     "go.useLanguageServer": false,
-
     "workbench.editor.showTabs": true,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
