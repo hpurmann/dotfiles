@@ -40,5 +40,7 @@
     "liveshare.guestApprovalRequired": true,
     "liveshare.autoShareServers": false,
     "editor.renderWhitespace": "none",
-    "editor.renderControlCharacters": false
+    "editor.renderControlCharacters": false,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false
 }
