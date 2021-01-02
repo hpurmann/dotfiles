@@ -32,6 +32,10 @@ $ ./install
 ## iTerm
 [Fix alt + (left/right) to jump words](https://coderwall.com/p/h6yfda/use-and-to-jump-forwards-backwards-words-in-iterm-2-on-os-x)
 
+## Fix Side buttons on external mouse
+
+[Install SensibleSideButtons](https://sensible-side-buttons.archagon.net/)
+
 ## NeoVim
 Install [vim-plug](https://github.com/junegunn/vim-plug)
 
