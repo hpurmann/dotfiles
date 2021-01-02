@@ -17,9 +17,12 @@ $ ./install
 
 ## Brew Packages
 
-```bash
-$ brew bundle
-```
+1. Manually sign in to the Mac App Store
+
+1. Install brew packages
+    ```bash
+    $ brew bundle
+    ```
 
 ## oh-my-zsh
 
