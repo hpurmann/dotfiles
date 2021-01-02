@@ -55,7 +55,7 @@ $ gem install tmuxinator
 
 ## Font
 
-[Meslo](https://github.com/powerline/fonts/blob/master/Meslo/Meslo%20LG%20M%20Regular%20for%20Powerline.otf)
+[Meslo](https://github.com/hpurmann/dotfiles/blob/master/fonts/Meslo%20LG%20M%20Regular%20for%20Powerline.otf)
 
 ## Visual Studio Code
 
