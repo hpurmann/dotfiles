@@ -36,6 +36,9 @@ $ ./install
 
 [Install SensibleSideButtons](https://sensible-side-buttons.archagon.net/)
 
+## Install Java
+[Install prebuilt AdoptOpenJDK](https://adoptopenjdk.net/)
+
 ## NeoVim
 Install [vim-plug](https://github.com/junegunn/vim-plug)
 

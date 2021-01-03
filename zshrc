@@ -27,7 +27,7 @@ export PATH="$PATH:$HOME/Library/Python/3.7/bin"
 export PATH="$PATH:$HOME/.yarn/bin"
 
 # Java
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 # Custom scripts
