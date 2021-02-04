@@ -45,6 +45,10 @@
         "command": "workbench.action.quickOpen"
     },
     {
+        "key": "ctrl+o",
+        "command": "workbench.view.search"
+    },
+    {
         "key": "ctrl+]",
         "command": "editor.action.revealDefinition"
     },
