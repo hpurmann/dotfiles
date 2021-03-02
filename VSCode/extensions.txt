@@ -1,0 +1,11 @@
+dbaeumer.vscode-eslint
+eamodio.gitlens
+firsttris.vscode-jest-runner
+hashicorp.terraform
+ms-vsliveshare.vsliveshare
+redhat.vscode-yaml
+shd101wyy.markdown-preview-enhanced
+timonwong.shellcheck
+vscodevim.vim
+wayou.vscode-todo-highlight
+yzhang.markdown-all-in-one
