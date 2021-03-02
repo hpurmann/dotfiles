@@ -81,6 +81,7 @@ Symlink files to Visual Studio Code folder:
 rm $HOME/Library/Application\ Support/Code/User/settings.json
 ln -s $HOME/dotfiles/VSCode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
 ln -s $HOME/dotfiles/VSCode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
+ln -s $HOME/dotfiles/VSCode/snippets $HOME/Library/Application\ Support/Code/User/snippets
 ```
 
 ## Disable press and hold
