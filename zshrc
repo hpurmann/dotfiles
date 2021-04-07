@@ -55,6 +55,9 @@ alias stashpull="git stash && git pull --rebase && git stash pop"
 # Homebrew update
 alias brewup="brew update && brew upgrade && brew cleanup && brew doctor"
 
+# Use python 3
+alias python=python3
+
 alias k=kubectl
 
 export HOMEBREW_NO_ANALYTICS=1
