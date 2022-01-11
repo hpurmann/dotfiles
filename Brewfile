@@ -21,7 +21,8 @@ brew 'the_silver_searcher'
 
 # Casks
 cask 'iterm2'
-cask 'spectacle'
+#cask 'spectacle'
+# Try cask 'rectangle' (https://github.com/rxhanson/Rectangle)
 cask 'vlc'
 cask 'mactex'
 cask 'skim'
