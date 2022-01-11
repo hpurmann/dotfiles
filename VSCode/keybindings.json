@@ -58,7 +58,7 @@
     },
     {
         "key": "cmd+shift+r",
-        "command": "go.benchmark.package"
+        "command": "extension.rerunLastCommand"
     },
     {
         "key": "cmd+m",
