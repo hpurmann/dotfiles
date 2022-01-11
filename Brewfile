@@ -8,9 +8,7 @@ brew 'zsh'
 brew 'mas'
 brew 'graphviz' # needed for PlantUML
 
-brew 'node'
-brew 'node@10'
-brew 'node@12'
+brew 'node@16'
 brew 'yarn'
 brew 'rbenv'
 brew 'tree'
