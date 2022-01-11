@@ -23,6 +23,8 @@ brew 'the_silver_searcher'
 cask 'iterm2'
 cask 'spectacle'
 cask 'vlc'
+cask 'mactex'
+cask 'skim'
 cask 'firefox'
 cask 'visual-studio-code'
 
