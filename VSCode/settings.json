@@ -45,5 +45,8 @@
     "[python]": {
       "editor.tabSize": 4
     },
+    "workbench.editorAssociations": {
+      "*.ipynb": "jupyter.notebook.ipynb"
+    },
     "python.testing.unittestEnabled": true
 }
