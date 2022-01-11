@@ -26,7 +26,6 @@ cask 'iterm2'
 cask 'spectacle'
 cask 'vlc'
 cask 'firefox'
-cask 'chromium'
 cask 'visual-studio-code'
 
 # Mac App Store
