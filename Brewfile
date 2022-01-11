@@ -28,6 +28,7 @@ cask 'mactex'
 cask 'skim'
 cask 'firefox'
 cask 'visual-studio-code'
+cask 'keybase'
 
 # Mac App Store
 mas 'Todoist', id: 585829637
