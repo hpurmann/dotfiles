@@ -34,6 +34,10 @@ $ ./install
 ## iTerm
 [Fix alt + (left/right) to jump words](https://coderwall.com/p/h6yfda/use-and-to-jump-forwards-backwards-words-in-iterm-2-on-os-x)
 
+## Docker for Mac
+
+Download and install [Docker for Mac](https://docs.docker.com/desktop/mac/install/)
+
 ## Fix Side buttons on external mouse
 
 [Install SensibleSideButtons](https://sensible-side-buttons.archagon.net/)
