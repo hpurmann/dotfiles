@@ -6,6 +6,8 @@ Clean and purely beautiful.
 
 ## Installation
 
+Read instructions on https://sourabhbajaj.com/mac-setup/
+
 * Install xCode
 * Install [Homebrew](http://brew.sh/)
 
