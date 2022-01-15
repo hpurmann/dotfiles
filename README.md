@@ -42,6 +42,13 @@ Download and install [Docker for Mac](https://docs.docker.com/desktop/mac/instal
 
 [Install SensibleSideButtons](https://sensible-side-buttons.archagon.net/)
 
+## FireFox browser extensions
+
+* DF Youtube
+* Ecosia
+* uBlock origin
+* Vimium
+
 ## Install Java
 [Install prebuilt AdoptOpenJDK](https://adoptopenjdk.net/)
 
