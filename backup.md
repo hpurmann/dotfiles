@@ -9,6 +9,7 @@
 * Opened tabs? => Pocket?
 * Browser Extension list + settings
 * Password manager
+* Calibre library
 * List of installed applications, check if available in brew (e.g. do `brew bundle dump` and diff)
 * Run full backup with TimeMachine
 
