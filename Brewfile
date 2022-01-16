@@ -26,8 +26,11 @@ cask 'vlc'
 cask 'skim'
 cask 'firefox'
 cask 'visual-studio-code'
-cask 'keybase'
+# Keybase should be re-enabled when re-installing
+#cask 'keybase'
 cask 'notion'
+cask 'calibre'
+cask 'resilio-sync'
 
 # Mac App Store
 mas 'Todoist', id: 585829637
