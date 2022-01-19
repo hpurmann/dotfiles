@@ -1,0 +1,20 @@
+# ~/.tmuxinator/exercise.yml
+
+name: exercise
+root: ~/dev
+
+startup_window: exercise
+
+windows:
+  - dotfiles:
+      root: ~/dotfiles
+      layout: even-horizontal
+      panes:
+        - nvim
+        -
+  - exercise:
+      root: ~/dev/exercise
+      layout: even-horizontal
+      panes:
+        -
+        -
