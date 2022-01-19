@@ -83,6 +83,13 @@ ln -s $HOME/dotfiles/VSCode/settings.json $HOME/Library/Application\ Support/Cod
 ln -s $HOME/dotfiles/VSCode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
 ```
 
+## Disable press and hold
+
+[Disable press and hold](https://apple.stackexchange.com/a/85352)
+```bash
+defaults write -g ApplePressAndHoldEnabled -bool false
+```
+
 ## IntelliJ
 * [Add live template for variable expansion](https://stackoverflow.com/questions/14053301/how-to-use-variable-value-in-live-templates-in-intellij-idea)
 * Give more memory
