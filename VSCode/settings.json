@@ -33,7 +33,6 @@
     },
     "go.formatTool": "goimports",
     "files.autoSave": "onFocusChange",
-    "window.zoomLevel": 1,
     "liveshare.anonymousGuestApproval": "reject",
     "liveshare.guestApprovalRequired": true,
     "liveshare.autoShareServers": false,
@@ -48,5 +47,7 @@
     "workbench.editorAssociations": {
       "*.ipynb": "jupyter.notebook.ipynb"
     },
-    "python.testing.unittestEnabled": true
+    "python.testing.unittestEnabled": true,
+    "window.zoomLevel": 1,
+    "debug.javascript.autoAttachFilter": "onlyWithFlag"
 }
