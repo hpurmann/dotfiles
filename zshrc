@@ -14,7 +14,9 @@ export PATH=$PATH:"/Library/TeX/texbin"
 # GoLang PATH
 export GOPATH=$HOME/dev/go
 export GOROOT="/usr/local/go"
+export GO111MODULE=on
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+
 
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
