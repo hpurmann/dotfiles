@@ -1,53 +1,88 @@
 {
-    "telemetry.enableTelemetry": false,
-    "editor.rulers": [120],
-    "editor.lineNumbers": "relative",
-    "editor.minimap.enabled": false,
-    "terminal.external.osxExec": "iTerm.App",
-    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
-    "go.autocompleteUnimportedPackages": true,
-    "vim.normalModeKeyBindings": [
-        {
-            "before": ["z", "j"],
-            "after": [ "o", "esc", "k" ]
-        },
-        {
-            "before": ["z", "k" ],
-            "after": [ "O", "esc" ]
-        }
-    ],
-    "vim.insertModeKeyBindings": [
-        {
-            "before": ["j", "k"],
-            "after": [ "esc" ]
-        }
-    ],
-    "go.useLanguageServer": false,
-    "workbench.editor.showTabs": true,
-    "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.colorCustomizations": {
-        "statusBar.background" : "#1A1A1A",
-        "statusBar.noFolderBackground" : "#212121",
-        "statusBar.debuggingBackground": "#263238"
+  "telemetry.enableTelemetry": false,
+  "editor.rulers": [
+    120
+  ],
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "terminal.external.osxExec": "iTerm.App",
+  "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+  "go.autocompleteUnimportedPackages": false,
+  "go.formatTool": "goimports",
+  "go.useLanguageServer": true,
+  "go.toolsManagement.autoUpdate": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "z",
+        "j"
+      ],
+      "after": [
+        "o",
+        "esc",
+        "k"
+      ]
     },
-    "go.formatTool": "goimports",
-    "files.autoSave": "onFocusChange",
-    "liveshare.anonymousGuestApproval": "reject",
-    "liveshare.guestApprovalRequired": true,
-    "liveshare.autoShareServers": false,
-    "editor.renderWhitespace": "none",
-    "editor.renderControlCharacters": false,
-    "editor.tabSize": 2,
-    "editor.detectIndentation": false,
-    "editor.formatOnSave": true,
-    "[python]": {
-      "editor.tabSize": 4
+    {
+      "before": [
+        "z",
+        "k"
+      ],
+      "after": [
+        "O",
+        "esc"
+      ]
     },
-    "workbench.editorAssociations": {
-      "*.ipynb": "jupyter.notebook.ipynb"
+    {
+      "before": [
+        "j"
+      ],
+      "after": [
+        "g",
+        "j"
+      ]
     },
-    "python.testing.unittestEnabled": true,
-    "window.zoomLevel": 1,
-    "debug.javascript.autoAttachFilter": "onlyWithFlag"
+    {
+      "before": [
+        "k"
+      ],
+      "after": [
+        "g",
+        "k"
+      ]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "esc"
+      ]
+    }
+  ],
+  "workbench.editor.showTabs": true,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#1A1A1A",
+    "statusBar.noFolderBackground": "#212121",
+    "statusBar.debuggingBackground": "#263238"
+  },
+  "files.autoSave": "onFocusChange",
+  "editor.renderWhitespace": "none",
+  "editor.renderControlCharacters": false,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "window.zoomLevel": 1,
+  "debug.javascript.autoAttachFilter": "onlyWithFlag"
 }
