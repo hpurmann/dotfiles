@@ -29,6 +29,10 @@
     "command": "workbench.action.quickOpen"
   },
   {
+    "key": "ctrl+shift+p",
+    "command": "workbench.action.openRecent"
+  },
+  {
     "key": "ctrl+o",
     "command": "workbench.view.search"
   },
@@ -56,6 +60,10 @@
   {
     "key": "cmd+m",
     "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "cmd+shift+i",
+    "command": "gitlens.openFileOnRemote"
   },
   {
     "key": "ctrl+l",
