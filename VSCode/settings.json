@@ -84,5 +84,6 @@
   },
   "window.zoomLevel": 1,
   "debug.javascript.autoAttachFilter": "onlyWithFlag",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "files.trimTrailingWhitespace": true
 }
