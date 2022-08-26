@@ -6,9 +6,9 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
-Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-airline'
-Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
 Plug 'benmills/vimux'
 Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
@@ -249,7 +249,7 @@ set guioptions-=L
 
 " Keep NERDTree window fixed between multiple toggles
 set winfixwidth
-nmap <C-i> :NERDTreeToggle<cr>
+nnoremap <Tab> :NERDTreeToggle<cr>
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     ***    Airline    ***
