@@ -17,6 +17,11 @@ $ cd ~/dotfiles
 $ ./install
 ```
 
+## Font
+
+[Meslo](https://github.com/hpurmann/dotfiles/blob/master/fonts/Meslo%20LG%20M%20Regular%20for%20Powerline.otf)
+
+
 ## Brew Packages
 
 1. Manually sign in to the Mac App Store
@@ -68,10 +73,6 @@ $ rbenv install <latest stable version>
 $ rbenv global <latest stable version>
 $ gem install tmuxinator
 ```
-
-## Font
-
-[Meslo](https://github.com/hpurmann/dotfiles/blob/master/fonts/Meslo%20LG%20M%20Regular%20for%20Powerline.otf)
 
 ## Visual Studio Code
 
