@@ -3,6 +3,7 @@
   "suggest.enablePreview": true,
   "diagnostic.checkCurrentLine": true,
   "eslint.autoFixOnSave": true,
+  "suggest.noselect": true,
   "languageserver": {
     "golang": {
       "command": "gopls",
