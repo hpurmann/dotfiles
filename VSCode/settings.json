@@ -11,6 +11,10 @@
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
   "go.toolsManagement.autoUpdate": true,
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": [
+    "--fast"
+  ],
   "vim.normalModeKeyBindings": [
     {
       "before": [
