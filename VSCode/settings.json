@@ -3,7 +3,6 @@
   "editor.rulers": [
     120
   ],
-  "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "terminal.external.osxExec": "iTerm.App",
   "terminal.integrated.shell.osx": "/opt/homebrew/bin/zsh",
@@ -86,8 +85,10 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
   },
-  "window.zoomLevel": 1,
   "debug.javascript.autoAttachFilter": "onlyWithFlag",
   "workbench.startupEditor": "none",
-  "files.trimTrailingWhitespace": true
+  "files.trimTrailingWhitespace": true,
+  "workbench.colorTheme": "Default Dark+",
+  "window.zoomLevel": 1,
+  "redhat.telemetry.enabled": false
 }
