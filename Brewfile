@@ -29,6 +29,7 @@ cask 'visual-studio-code'
 # Keybase should be re-enabled when re-installing
 #cask 'keybase'
 cask 'notion'
+cask 'xbar'
 #cask 'calibre'
 #cask 'resilio-sync'
 
