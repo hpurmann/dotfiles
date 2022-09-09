@@ -6,7 +6,7 @@
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "terminal.external.osxExec": "iTerm.App",
-  "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+  "terminal.integrated.shell.osx": "/opt/homebrew/bin/zsh",
   "go.autocompleteUnimportedPackages": false,
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
