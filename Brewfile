@@ -29,8 +29,8 @@ cask 'visual-studio-code'
 # Keybase should be re-enabled when re-installing
 #cask 'keybase'
 cask 'notion'
-cask 'calibre'
-cask 'resilio-sync'
+#cask 'calibre'
+#cask 'resilio-sync'
 
 # Mac App Store
 mas 'Todoist', id: 585829637
