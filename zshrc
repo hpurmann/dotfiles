@@ -1,6 +1,5 @@
 # Homebrew
 export PATH="/usr/local/bin"
-export PATH="/usr/local/opt/node@16/bin:$PATH"
 
 # System binaries
 export PATH=$PATH:"/usr/bin"
