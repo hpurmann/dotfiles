@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Determines which branch is used as default
+default_branch=`git branch | grep -o -m1 "\b\(master\|main\)\b"`
+
+git branch --merged $default_branch | egrep -v "(^\\*|$default_branch)" | xargs -n 1 git branch -d
