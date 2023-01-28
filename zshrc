@@ -55,6 +55,8 @@ alias stashpull="git stash && git pull --rebase && git stash pop"
 
 # Homebrew update
 eval "$(/opt/homebrew/bin/brew shellenv)"
+# Multi-user environment: https://www.codejam.info/2021/11/homebrew-multi-user.html
+alias brew='sudo -Hu hendrik.purmann brew'
 alias brewup="brew update && brew upgrade && brew cleanup && brew doctor"
 
 # Use python 3
