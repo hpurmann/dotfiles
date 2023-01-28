@@ -1,9 +1,8 @@
 {
   "telemetry.enableTelemetry": false,
-  "editor.rulers": [
-    120
-  ],
+  "editor.rulers": [120],
   "editor.minimap.enabled": false,
+  "editor.suggest.localityBonus": true,
   "terminal.external.osxExec": "iTerm.App",
   "terminal.integrated.shell.osx": "/opt/homebrew/bin/zsh",
   "go.autocompleteUnimportedPackages": false,
@@ -11,59 +10,42 @@
   "go.useLanguageServer": true,
   "go.toolsManagement.autoUpdate": true,
   "go.lintTool": "golangci-lint",
-  "go.lintFlags": [
-    "--fast"
-  ],
+  "go.lintFlags": ["--fast"],
+  "go.lintOnSave": "off",
+  "go.coverOnSave": true,
+  "go.coverageDecorator": {
+    "type": "gutter",
+    "coveredHighlightColor": "rgba(64,128,128,0.5)",
+    "uncoveredHighlightColor": "rgba(128,64,64,0.25)",
+    "coveredGutterStyle": "blockgreen",
+    "uncoveredGutterStyle": "blockred"
+  },
+  "gopls": {
+    "allExperiments": true,
+    "ui.diagnostic.staticcheck": true
+  },
   "vim.normalModeKeyBindings": [
     {
-      "before": [
-        "z",
-        "j"
-      ],
-      "after": [
-        "o",
-        "esc",
-        "k"
-      ]
+      "before": ["z", "j"],
+      "after": ["o", "esc", "k"]
     },
     {
-      "before": [
-        "z",
-        "k"
-      ],
-      "after": [
-        "O",
-        "esc"
-      ]
+      "before": ["z", "k"],
+      "after": ["O", "esc"]
     },
     {
-      "before": [
-        "j"
-      ],
-      "after": [
-        "g",
-        "j"
-      ]
+      "before": ["j"],
+      "after": ["g", "j"]
     },
     {
-      "before": [
-        "k"
-      ],
-      "after": [
-        "g",
-        "k"
-      ]
+      "before": ["k"],
+      "after": ["g", "k"]
     }
   ],
   "vim.insertModeKeyBindings": [
     {
-      "before": [
-        "j",
-        "k"
-      ],
-      "after": [
-        "esc"
-      ]
+      "before": ["j", "k"],
+      "after": ["esc"]
     }
   ],
   "workbench.editor.showTabs": true,
@@ -89,6 +71,18 @@
   "workbench.startupEditor": "none",
   "files.trimTrailingWhitespace": true,
   "workbench.colorTheme": "Default Dark+",
+  "redhat.telemetry.enabled": false,
+  "window.openFoldersInNewWindow": "on",
+  "vim.smartRelativeLine": true,
+  "testing.automaticallyOpenPeekView": "never",
+  "go.coverOnSingleTest": true,
+  "go.testExplorer.showDynamicSubtestsInEditor": true,
   "window.zoomLevel": 1,
-  "redhat.telemetry.enabled": false
+  "snyk.advanced.cliPath": "/Users/hendrik.purmann/Library/Application Support/snyk-ls/snyk-macos",
+  "snyk.yesWelcomeNotification": false,
+  "snyk.trustedFolders": [
+    "/Users/hendrik.purmann/dev/banking/bankingservice",
+    "/Users/hendrik.purmann/dev/bank-platform/bankplatform",
+    "/Users/hendrik.purmann/dev/banking/loyaltyservice"
+  ]
 }

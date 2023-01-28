@@ -33,10 +33,6 @@
     "command": "workbench.action.openRecent"
   },
   {
-    "key": "ctrl+o",
-    "command": "workbench.view.search"
-  },
-  {
     "key": "ctrl+]",
     "command": "editor.action.revealDefinition"
   },
@@ -68,5 +64,9 @@
   {
     "key": "ctrl+i",
     "command": "editor.action.showHover"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "go.test.cursor"
   }
 ]
