@@ -12,7 +12,7 @@ export PATH=$PATH:"/Library/TeX/texbin"
 
 # GoLang PATH
 export GOPATH=$HOME/dev/go
-export GOROOT="/usr/local/go"
+export GOROOT="/opt/homebrew/opt/go/libexec"
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN:$GOROOT/bin
 
